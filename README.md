@@ -1,2 +1,2 @@
 # hpduan.github.io
-H. P. Duan ‘s Academic Homepage
+Academic Homepage of H.P.Duan
