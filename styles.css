@@ -216,7 +216,7 @@ article{
     line-height: 1.5;
 }
 #content p, ul, ol, hr {
-margin-bottom: 24px;
+margin-bottom: 12px;
 }
 #content ul ul, ol ol, ul ol, ol ul {
 margin-bottom: 0;
