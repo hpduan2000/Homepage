@@ -223,9 +223,10 @@ margin-bottom: 0;
 }
 #content h1, h2, h3, h4, h5, h6 {
 color: #333;
-margin: 0 0 20px 0;
+margin: 0 0 0 0;
 line-height: 1.5em;
 }
+
 .alignleft, img.alignleft {
 display: inline;
 float: left;
@@ -257,9 +258,9 @@ text-shadow: 0px 2px 3px #ddd;
 }
 
 aside ul {
-list-style: square;
-/* color: #bbb; */
-margin: -15px 0 15px 25px;
+    list-style: square;
+    /* color: #bbb; */
+    margin: 5px 0 15px 25px;
 }
 
 
@@ -342,15 +343,14 @@ footer aside h4 {
 color: #000000;
 font-size: 18px;
 margin-left: 10px;
-/* font-weight: normal; */
-/* line-height: 1.5em; */
+/* margin: 0 0 20px 0; */
 }
 
 footer aside h5 {
 color: #000000;
 font-size: 14px;
 font-weight: normal;
-/* line-height: 1.5em; */
+margin: 0 0 20px 0;
 }
 
 footer ul {
