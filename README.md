@@ -1,4 +1,2 @@
-# My Academic Homepage
-## Publishment
-## Open Code
-
+# H. P. Duan | Academic | Central South University
+Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.
