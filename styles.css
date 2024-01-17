@@ -11,14 +11,12 @@ display: block;
 
 body {
 line-height: 1;
-/* background: #EAEAEA url(images/64bg.jpg) repeat; */
 font-family: Arial, Helvetica, sans-serif;
 color: #000000;
 font-size: 14px;
 line-height: 18px;
 }
-	
-
+    
 /* 外圈框线 */
 #wrapper {
 width: 940px;
@@ -32,7 +30,6 @@ border: 3px solid #B2B2B2;
 -webkit-border-radius: 10px;
 }
 /* 外圈框线完成 */
-
 
 /* 抬头header */
 header {
@@ -68,32 +65,6 @@ margin-top: -5px;
 }
 /* 抬头背景 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 菜单栏 */
 nav .menu {
 font-size: 25px;
@@ -121,25 +92,6 @@ nav .menu a:hover {
 text-decoration: underline;
 }
 /* 菜单栏 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 正文布局 */
 /* 总宽度940px */
@@ -201,10 +153,6 @@ li {
 padding-left: 5px;
 }
 
-
-
-
-
 /** 中间正文 **/
 article img {
 border: none;
@@ -248,8 +196,6 @@ img.alignleft, img.alignright, img.aligncenter {
 margin-bottom: 10px;
 }
 
-
-
 /* sidebar and footer widget blocks */
 
 aside h3 {
@@ -263,33 +209,24 @@ aside ul {
     margin: 5px 0 15px 25px;
 }
 
-
-
-
-
-
-
-
 .sidebar {
     display: flex;
-    flex-direction: column; /* 将元素垂直排列，使文本在图片下方 */
+    flex-direction: column;
     align-items: center;
-    text-align: left; /* 如果想让文本水平居中，可以使用text-align */
+    text-align: left;
     justify-content: center;
 }
-  
-
+    
 .sidebar a:link, .sidebar a:visited {
     color: #000000;
 }
 
-
 .sidebar img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px; /* 添加图片与文本之间的垂直间距，根据需要调整 */
+    margin-bottom: 10px;
 }
-  
+    
 .icon-link {
     margin-bottom: 10px;
     text-decoration: none;
@@ -299,24 +236,6 @@ aside ul {
 .icon-link i {
     margin-right: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 页面底部 */
 #footer-area {
@@ -373,11 +292,11 @@ margin-left: 10px;
 .footer-links {
 display: flex;
 flex-wrap: wrap;
-justify-content: space-around;  /* 或者使用 justify-content: space-between; */
+justify-content: space-around;
 }
 
 .footer-links b {
-flex: 0 0 15%; /* 设置每个链接的宽度，确保每行最多显示五个链接 */
-margin: 5px;   /* 调整链接之间的间距，可根据需要更改 */
+flex: 0 0 15%;
+margin: 5px;
 margin-bottom: -20px;
 }
