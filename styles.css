@@ -105,7 +105,7 @@ overflow: hidden;
 /* 中间内容 */
 #content {
 float: left;
-width: 500px;
+width: 680px;
 margin-left: 20px;
 margin-right: 20px;
 }
@@ -113,12 +113,6 @@ margin-right: 20px;
 #sidebar1 {
 float: left;
 padding-left: 20px;
-width: 180px;
-}
-/* 右边侧栏 */
-#sidebar2 {
-float: right;
-padding-right: 20px;
 width: 180px;
 }
 /* 底部 */
@@ -165,6 +159,7 @@ article{
 }
 #content p, ul, ol, hr {
 margin-bottom: 12px;
+margin-top: 5px;
 }
 #content ul ul, ol ol, ul ol, ol ul {
 margin-bottom: 0;
