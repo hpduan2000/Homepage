@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project | H. P. Duan</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+	<link rel="shortcut icon" href="images/wechat.webp?v=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div id="wrapper">
+	<!-- .....................header..................... -->
+	<header>
+		<h1>Welcome to My Academic Homepage</h1>
+		<h2 style="font-size: 15px;">
+			<div class="date" id="date"></div>
+			<div class="time" id="time"></div>
+		</h2>
+	</header>
+	<nav>
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="publishment.html">Publishment</a></li>
+				<li><a href="project.html">Project</a></li>
+				<li><a href="award.html">Award & Honor</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- .....................content..................... -->
+	<section id="main">
+		<!-- Main content -->
+		<!-- <article style = "background-color: #f1f1f1; border-radius: 20px; width: 800px; 
+		padding: 1em; margin-left: 53px; margin-bottom: 20px; font-size: 17px; padding-bottom: 0.001em;"> -->
+		<article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
+		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
+		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
+		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px; padding-bottom: 0.001em">
+% Ansys 2023 R1 based distributed computing with 24 core CPU
+% INPUT:
+% working_path = '******';  % working path *considering for-end*
+% ansys_path = strcat('******');
+% np = '24';
+% jobname = strcat('******');
+% mainMAC = '******';
+% ansysbatch(working_path,ansys_path,np,jobname,mainMAC)
+		</article>
+		<article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
+		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
+		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
+		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px; padding-bottom: 0.001em">
+function ansysbatch(working_path,ansys_path,np,jobname,mainMAC)
+	time_total_start = datetime('now');
+	disp('S T A R T :');
+	disp(time_total_start)
+	disp('The work is processing...')
+	%...................................................
+	input_mac = strcat(working_path, '\', mainMAC);
+	output_file = strcat(working_path, '\', 'ans.out');
+	sys_char = strcat('SET KMP_STACKSIZE=2048k &',32,'"',ansys_path,'"',32,'-p ansys',32,'-np',32, np, 32,'-lch',32,'-dir',32,'"',working_path,'"',32,'-j',32,'"',jobname,'"',32,'-s read  -m 5000 -db 1000 -l en-us -b',32,'-i',32,'"',input_mac,'"',32,'-o',32,'"',output_file,'"');
+	anlysis = system(sys_char);
+	%...................................................
+	work_list = dir(working_path);
+	is_sub = [work_list.isdir];
+	file_list = {work_list(logical(1-is_sub)).name}';
+	file_ext = {'.out'; '.err'; '.SECT'; '.MAC'};
+	for i = 1:length(file_list)
+		if ~contains(file_list{i},file_ext)
+			delete([working_path,'/',file_list{i}])
+		end
+	end
+	%...................................................
+	disp(' ')
+	disp('F I N I S H E D !');
+	time_total_end = datetime('now');
+	disp(time_total_end);
+	disp('Cost time :');
+	disp(time_total_end - time_total_start);
+end
+		</article>
+	</section>
+	<!-- .....................footer..................... -->
+	<footer>
+		<section id="footer-area">
+			<section id="footer-outer-block">
+				<aside class="footer-segment">
+						<h4>Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.</h4>
+				</aside>
+			</section>
+		</section>
+	</footer>
+	<!-- .....................end..................... -->
+</div>
+<script>
+	function updateDateTime() {
+	var now = new Date();
+	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
+	document.getElementById('date').textContent = formattedDate;
+	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+	document.getElementById('time').textContent = formattedTime;
+	}
+	setInterval(updateDateTime, 1000);
+	updateDateTime();
+</script>
+</body>
+</html>
