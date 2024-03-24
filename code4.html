@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project | H. P. Duan | Personal Academic Homepage</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+	<link rel="shortcut icon" href="images/wechat.webp?v=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div id="wrapper">
+	<!-- .....................header..................... -->
+	<header>
+		<h1>Welcome to My Academic Homepage</h1>
+		<h2 style="font-size: 15px;">
+			<div class="date" id="date"></div>
+			<div class="time" id="time"></div>
+		</h2>
+	</header>
+	<nav>
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="publishment.html">Publishment</a></li>
+				<li><a href="project.html">Project</a></li>
+				<li><a href="award.html">Award & Honor</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- .....................content..................... -->
+	<section id="main">
+		<!-- Main content -->
+        <article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
+		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
+		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
+		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px">
+## getFolderList.m
+%% H.P.Duan; hpduan2000@csu.edu.cn
+function list = getFolderList(path)
+    file = dir(path);
+    list = {file.name}';
+    list = list(3:end);
+end
+        </article>
+	</section>
+	<!-- .....................footer..................... -->
+	<footer>
+		<section id="footer-area">
+			<section id="footer-outer-block">
+				<aside class="footer-segment">
+						<h4>Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.</h4>
+				</aside>
+			</section>
+		</section>
+	</footer>
+	<!-- .....................end..................... -->
+</div>
+<script>
+	function updateDateTime() {
+	var now = new Date();
+	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
+	document.getElementById('date').textContent = formattedDate;
+	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+	document.getElementById('time').textContent = formattedTime;
+	}
+	setInterval(updateDateTime, 1000);
+	updateDateTime();
+</script>
+<script type="text/javascript">
+	window.onload = function(){
+		document.onkeydown = function (){
+			var e = window.event || arguments[0];
+			//F12
+			if(e.keyCode == 123){
+				return false;
+			//Ctrl+Shift+I
+			}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+				return false;
+			//Shift+F10
+			}else if((e.shiftKey) && (e.keyCode == 121)){
+				return false;
+			//Ctrl+U
+			}else if((e.ctrlKey) && (e.keyCode == 85)){
+				return false;
+			}
+		};
+		document.oncontextmenu = function (){
+			return false;
+		}
+	}
+</script>
+</body>
+</html>
