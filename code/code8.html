@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Square figure test [2024.03]</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"  media="screen" />
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+	<link rel="shortcut icon" href="wechat.webp?v=1">
+</head>
+<body>
+<div id="wrapper">
+	<!-- .....................header..................... -->
+	<header>
+		<h1>Welcome to My Academic Homepage</h1>
+		<h2 style="font-size: 15px;">
+			<div class="date" id="date"></div>
+			<div class="time" id="time"></div>
+		</h2>
+	</header>
+	<nav>
+		<div class="menu">
+			<ul>
+				<li><a href="https://hpduan.cn/index.html">Home</a></li>
+				<li><a href="https://hpduan.cn/publishment.html">Publication</a></li>
+				<li><a href="https://hpduan.cn/project.html">Project</a></li>
+				<li><a href="https://hpduan.cn/award.html">Award & Honor</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- .....................content..................... -->
+	<section id="main">
+		<!-- Main content -->
+        <article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
+		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
+		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
+		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px">
+function p2 = ESA(x,y,alpha)
+    % @author: h.p.duan; hpduan2000@csu.edu.cn
+    % Ensure the sample data is a VECTOR
+    % make a log function transfor for origin datas
+    data1 = log(x);
+    data2 = log(y);
+    [m,n] = size(data1);
+    % ESA framework
+    [~, p1_data1, ~] = swtest(data1, alpha);
+    [~, p1_data2, ~] = swtest(data2, alpha);
+    if p1_data1 >= alpha && p1_data2 >= alpha
+        [~, p2] = ttest2(data1(:,i), data2(:,i), 'Vartype', 'unequal');
+        % Test the null hypothesis H0, that is, the two data vectors come from a population with equal means, 
+        % without assuming that the population also has homogeneous variances.
+    else
+        p2 = ranksum(data1, data2);
+    end
+end
+        </article>
+        <article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
+		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
+		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
+		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px">
+function [H, pValue, W] = swtest(x, alpha)
+    % Ensure the sample data is a VECTOR
+
+    if numel(x) == length(x)
+        x  =  x(:);               % Ensure a column vector.
+    else
+        error(' Input sample ''X'' must be a vector.');
+    end
+
+    % Remove missing observations indicated by NaN's and check sample size.
+
+    x  =  x(~isnan(x));
+
+    if length(x) < 3
+    error(' Sample vector ''X'' must have at least 3 valid observations.');
+    end
+
+    if length(x) > 5000
+        warning('Shapiro-Wilk test might be inaccurate due to large sample size ( > 5000).');
+    end
+
+    % Ensure the significance level, ALPHA, is a 
+    % scalar, and set default if necessary.
+
+    if (nargin >= 2) && ~isempty(alpha)
+    if ~isscalar(alpha)
+        error(' Significance level ''Alpha'' must be a scalar.');
+    end
+    if (alpha <= 0 || alpha >= 1)
+        error(' Significance level ''Alpha'' must be between 0 and 1.'); 
+    end
+    else
+    alpha  =  0.05;
+    end
+
+    % First, calculate the a's for weights as a function of the m's
+    % See Royston (1992, p. 117) and Royston (1993b, p. 38) for details
+    % in the approximation.
+
+    x       =   sort(x); % Sort the vector X in ascending order.
+    n       =   length(x);
+    mtilde  =   norminv(((1:n)' - 3/8) / (n + 1/4));
+    weights =   zeros(n,1); % Preallocate the weights.
+
+    if kurtosis(x) > 3
+        
+        % The Shapiro-Francia test is better for leptokurtic samples.
+        
+        weights =   1/sqrt(mtilde'*mtilde) * mtilde;
+
+        %
+        % The Shapiro-Francia statistic W' is calculated to avoid excessive
+        % rounding errors for W' close to 1 (a potential problem in very
+        % large samples).
+        %
+
+        W   =   (weights' * x)^2 / ((x - mean(x))' * (x - mean(x)));
+
+        % Royston (1993a, p. 183):
+        nu      =   log(n);
+        u1      =   log(nu) - nu;
+        u2      =   log(nu) + 2/nu;
+        mu      =   -1.2725 + (1.0521 * u1);
+        sigma   =   1.0308 - (0.26758 * u2);
+
+        newSFstatistic  =   log(1 - W);
+
+        %
+        % Compute the normalized Shapiro-Francia statistic and its p-value.
+        %
+
+        NormalSFstatistic =   (newSFstatistic - mu) / sigma;
+        
+        % Computes the p-value, Royston (1993a, p. 183).
+        pValue   =   1 - normcdf(NormalSFstatistic, 0, 1);
+        
+    else
+        
+        % The Shapiro-Wilk test is better for platykurtic samples.
+
+        c    =   1/sqrt(mtilde'*mtilde) * mtilde;
+        u    =   1/sqrt(n);
+
+        % Royston (1992, p. 117) and Royston (1993b, p. 38):
+        PolyCoef_1   =   [-2.706056 , 4.434685 , -2.071190 , -0.147981 , 0.221157 , c(n)];
+        PolyCoef_2   =   [-3.582633 , 5.682633 , -1.752461 , -0.293762 , 0.042981 , c(n-1)];
+
+        % Royston (1992, p. 118) and Royston (1993b, p. 40, Table 1)
+        PolyCoef_3   =   [-0.0006714 , 0.0250540 , -0.39978 , 0.54400];
+        PolyCoef_4   =   [-0.0020322 , 0.0627670 , -0.77857 , 1.38220];
+        PolyCoef_5   =   [0.00389150 , -0.083751 , -0.31082 , -1.5861];
+        PolyCoef_6   =   [0.00303020 , -0.082676 , -0.48030];
+
+        PolyCoef_7   =   [0.459 , -2.273];
+
+        weights(n)   =   polyval(PolyCoef_1 , u);
+        weights(1)   =   -weights(n);
+        
+        if n > 5
+            weights(n-1) =   polyval(PolyCoef_2 , u);
+            weights(2)   =   -weights(n-1);
+        
+            count  =   3;
+            phi    =   (mtilde'*mtilde - 2 * mtilde(n)^2 - 2 * mtilde(n-1)^2) / ...
+                    (1 - 2 * weights(n)^2 - 2 * weights(n-1)^2);
+        else
+            count  =   2;
+            phi    =   (mtilde'*mtilde - 2 * mtilde(n)^2) / ...
+                    (1 - 2 * weights(n)^2);
+        end
+            
+        % Special attention when n = 3 (this is a special case).
+        if n == 3
+            % Royston (1992, p. 117)
+            weights(1)  =   1/sqrt(2);
+            weights(n)  =   -weights(1);
+            phi = 1;
+        end
+
+        % The vector 'WEIGHTS' obtained next corresponds to the same coefficients
+        % listed by Shapiro-Wilk in their original test for small samples.
+
+        weights(count : n-count+1)  =  mtilde(count : n-count+1) / sqrt(phi);
+
+        % The Shapiro-Wilk statistic W is calculated to avoid excessive rounding
+        % errors for W close to 1 (a potential problem in very large samples).
+
+        W   =   (weights' * x) ^2 / ((x - mean(x))' * (x - mean(x)));
+
+        % Calculate the normalized W and its significance level (exact for
+        % n = 3). Royston (1992, p. 118) and Royston (1993b, p. 40, Table 1).
+
+        newn    =   log(n);
+
+        if (n >= 4) && (n <= 11)
+        
+            mu      =   polyval(PolyCoef_3 , n);
+            sigma   =   exp(polyval(PolyCoef_4 , n));    
+            gam     =   polyval(PolyCoef_7 , n);
+        
+            newSWstatistic  =   -log(gam-log(1-W));
+        
+        elseif n > 11
+        
+            mu      =   polyval(PolyCoef_5 , newn);
+            sigma   =   exp(polyval(PolyCoef_6 , newn));
+        
+            newSWstatistic  =   log(1 - W);
+        
+        elseif n == 3
+            mu      =   0;
+            sigma   =   1;
+            newSWstatistic  =   0;
+        end
+
+        % Compute the normalized Shapiro-Wilk statistic and its p-value.
+
+        NormalSWstatistic   =   (newSWstatistic - mu) / sigma;
+        
+        % NormalSWstatistic is referred to the upper tail of N(0,1),
+        % Royston (1992, p. 119).
+        pValue       =   1 - normcdf(NormalSWstatistic, 0, 1);
+        
+        % Special attention when n = 3 (this is a special case).
+        if n == 3
+            pValue  =   6/pi * (asin(sqrt(W)) - asin(sqrt(3/4)));
+            % Royston (1982a, p. 121)
+        end
+        
+    end
+
+    % To maintain consistency with existing Statistics Toolbox hypothesis
+    % tests, returning 'H = 0' implies that we 'Do not reject the null 
+    % hypothesis at the significance level of alpha' and 'H = 1' implies 
+    % that we 'Reject the null hypothesis at significance level of alpha.'
+
+    H  = (alpha >= pValue);
+end
+        </article>
+	</section>
+	<!-- .....................footer..................... -->
+	<footer>
+		<section id="footer-area">
+			<section id="footer-outer-block">
+				<aside class="footer-segment">
+						<h4>Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.</h4>
+				</aside>
+			</section>
+		</section>
+	</footer>
+	<!-- .....................end..................... -->
+</div>
+<script>
+	function updateDateTime() {
+	var now = new Date();
+	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
+	document.getElementById('date').textContent = formattedDate;
+	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+	document.getElementById('time').textContent = formattedTime;
+	}
+	setInterval(updateDateTime, 1000);
+	updateDateTime();
+</script>
+<script type="text/javascript">
+	window.onload = function(){
+		document.onkeydown = function (){
+			var e = window.event || arguments[0];
+			//F12
+			if(e.keyCode == 123){
+				return false;
+			//Ctrl+Shift+I
+			}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+				return false;
+			//Shift+F10
+			}else if((e.shiftKey) && (e.keyCode == 121)){
+				return false;
+			//Ctrl+U
+			}else if((e.ctrlKey) && (e.keyCode == 85)){
+				return false;
+			}
+		};
+		document.oncontextmenu = function (){
+			return false;
+		}
+	}
+</script>
+</body>
+</html>
