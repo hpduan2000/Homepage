@@ -1,63 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Using Matlab for ANSYS Batch processing [2023.11]</title>
-	<link rel="stylesheet" type="text/css" href="https://hpduan.cn/css/styles.css"  media="screen" />
-	<link rel="stylesheet" type="text/css" href="https://hpduan.cn/css/print.css" media="print" />
-	<link rel="shortcut icon" href="https://hpduan.cn/images/wechat.webp?v=1">
-</head>
-<body>
-<div id="wrapper">
-	<!-- .....................header..................... -->
-	<header>
-		<h1>Welcome to My Academic Homepage</h1>
-		<h2 style="font-size: 15px;">
-			<div class="date" id="date"></div>
-			<div class="time" id="time"></div>
-		</h2>
-	</header>
-	<nav>
-		<div class="menu">
-			<ul>
-				<li><a href="https://hpduan.cn/index.html">Home</a></li>
-				<li><a href="https://hpduan.cn/publishment.html">Publication</a></li>
-				<li><a href="https://hpduan.cn/project.html">Project</a></li>
-				<li><a href="https://hpduan.cn/award.html">Award & Honor</a></li>
-			</ul>
-		</div>
-	</nav>
-	<!-- .....................content..................... -->
-	<section id="main">
-		<!-- Main content -->
-        <article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
-		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
-		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
-		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px">
-function p2 = ESA(x,y,alpha)
-    % @author: h.p.duan; hpduan2000@csu.edu.cn
-    % Ensure the sample data is a VECTOR
-    % make a log function transfor for origin datas
-    data1 = log(x);
-    data2 = log(y);
-    [m,n] = size(data1);
-    % ESA framework
-    [~, p1_data1, ~] = swtest(data1, alpha);
-    [~, p1_data2, ~] = swtest(data2, alpha);
-    if p1_data1 >= alpha && p1_data2 >= alpha
-        [~, p2] = ttest2(data1(:,i), data2(:,i), 'Vartype', 'unequal');
-        % Test the null hypothesis H0, that is, the two data vectors come from a population with equal means, 
-        % without assuming that the population also has homogeneous variances.
-    else
-        p2 = ranksum(data1, data2);
-    end
-end
-        </article>
-        <article style = "background-color: #f1f1f1; border-radius: 20px; counter-reset: line; 
-		overflow-x: auto; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; 
-		font-size: 17px; color: #000000; word-wrap: break-word; white-space: pre; display: block; 
-		padding-left: 2em; width: 800px; margin-left: 53px; margin-bottom: 20px">
+# Shapiro-Wilk test
+Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
+
+## function
+```matlab
 function [H, pValue, W] = swtest(x, alpha)
     % Ensure the sample data is a VECTOR
 
@@ -236,55 +181,4 @@ function [H, pValue, W] = swtest(x, alpha)
 
     H  = (alpha >= pValue);
 end
-        </article>
-	</section>
-	<!-- .....................footer..................... -->
-	<footer>
-		<section id="footer-area">
-			<section id="footer-outer-block">
-				<aside class="footer-segment">
-						<h4>Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.</h4>
-				</aside>
-			</section>
-		</section>
-	</footer>
-	<!-- .....................end..................... -->
-</div>
-<script>
-	function updateDateTime() {
-	var now = new Date();
-	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
-	document.getElementById('date').textContent = formattedDate;
-	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
-	document.getElementById('time').textContent = formattedTime;
-	}
-	setInterval(updateDateTime, 1000);
-	updateDateTime();
-</script>
-<script type="text/javascript">
-	window.onload = function(){
-		document.onkeydown = function (){
-			var e = window.event || arguments[0];
-			//F12
-			if(e.keyCode == 123){
-				return false;
-			//Ctrl+Shift+I
-			}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
-				return false;
-			//Shift+F10
-			}else if((e.shiftKey) && (e.keyCode == 121)){
-				return false;
-			//Ctrl+U
-			}else if((e.ctrlKey) && (e.keyCode == 85)){
-				return false;
-			}
-		};
-		document.oncontextmenu = function (){
-			return false;
-		}
-	}
-</script>
-</body>
-</html>
+```
