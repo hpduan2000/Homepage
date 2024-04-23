@@ -4,7 +4,7 @@ Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn
 ## function
 
 ```matlab
-function ansysbatch(working_path, nsys_path, np, jobname, mainMAC)
+function ansysbatch(working_path, ansys_path, np, jobname, mainMAC)
 	%...................................................
 	input_mac = strcat(working_path, '\', mainMAC);
 	output_file = strcat(working_path, '\', 'ans.out');
