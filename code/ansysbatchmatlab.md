@@ -1,13 +1,5 @@
 # Using Matlab for ANSYS Batch processing
-By H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
-Ansys 2023 R1 based distributed computing with 24 core CPU  
-Input:  
-working_path = '******';  
-ansys_path = strcat('******');  
-np = '******';  
-jobname = strcat('******');  
-mainMAC = '******';  
-ansysbatch(working_path, ansys_path, np, jobname, mainMAC)  
+Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
 
 ## function
 
