@@ -72,17 +72,18 @@
 	</section>
 	<!-- .....................footer..................... -->
 	<script>
-		window.onload = function() {
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					document.getElementById("txtContent").innerHTML = xhr.responseText;
-				}
-			};
-			xhr.open("GET", "https://hpduan.cn/header.txt", true);
-			xhr.send();
-		};
-	</script>
+        function loadText() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://hpduan.cn/header.txt', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('txtContent').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+        loadText(); // 调用函数以加载并显示TXT内容
+    </script>
 	<footer>
 		<section id="footer-area">
 			<section id="footer-outer-block">
