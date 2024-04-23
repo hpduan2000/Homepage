@@ -1,10 +1,9 @@
-	<nav>
-		<div class="menu">
-			<ul>
-				<li><a href="/index.html">Home</a></li>
-				<li><a href="/publishment.html">Publication</a></li>
-				<li><a href="/project.html">Project</a></li>
-				<li><a href="/award.html">Award & Honor</a></li>
-			</ul>
-		</div>
-	</nav>
+    <footer>
+		<section id="footer-area">
+			<section id="footer-outer-block">
+				<aside class="footer-segment">
+						<h4>Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.</h4>
+				</aside>
+			</section>
+		</section>
+	</footer>
