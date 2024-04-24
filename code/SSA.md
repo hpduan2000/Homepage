@@ -1,4 +1,4 @@
-# Engineering significance analysis (ESA)
+# Statistical significance analysis (SSA)
 Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
 
 ## subfunction
@@ -6,7 +6,7 @@ Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn
 
 ## function
 ```matlab
-function p2 = ESA(x,y,alpha)
+function p2 = SSA(x,y,alpha)
     % Ensure the sample data is a VECTOR
     % make a log function transfor for origin datas
     data1 = log(x);
