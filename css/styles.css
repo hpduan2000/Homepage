@@ -111,9 +111,6 @@ overflow: hidden;
         padding-left: 20px;
         width: 180px;
     }
-    #sidebar1 h1, h2, h3, h4, h5, h6 {
-        color: #E1DFDF;
-    }
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -121,7 +118,7 @@ overflow: hidden;
             text-align: left;
             justify-content: center;
         }
-        .sidebar a:link, .sidebar a:visited {
+        .sidebar a:link, .sidebar a:visited, .sidebar h1, h2, h3, h4, h5, h6{
             color: #E1DFDF;  /* 字体颜色 */
         }
         .sidebar img {
