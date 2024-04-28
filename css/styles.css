@@ -219,6 +219,7 @@ footer {
     color: #4DBEEE; /* 设置文字颜色 */
     font-size: 18px;
     text-align: center; /* 设置文本居中 */
+    margin-bottom: -10px;
 }
 
 
