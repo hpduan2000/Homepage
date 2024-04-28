@@ -36,26 +36,26 @@ border: 3px solid #606060;   /* 外圈框线颜色 */
 header {
     padding: 20px 0 0 0;
 }  
-/* Welcome to My Academic Homepage */
-header>h1 {
-    float: left;
-    margin: 0 0 18px 10px;
-    width: 940px;
-    font-size: 40px;
-    line-height: 36px;
-    color: #DC98FF;
-    font-weight: bold;
-    text-decoration: none;
-}  
-/* date update */
-header>h2 {
-    color: #777;
-    clear: right;
-    float: right;
-    font-style: italic;
-    font-size: 14px;
-    margin: 0px 15px -15px 0;
-}
+    /* Welcome to My Academic Homepage */
+    header>h1 {
+        float: left;
+        margin: 0 0 18px 10px;
+        width: 940px;
+        font-size: 40px;
+        line-height: 36px;
+        color: #DC98FF;
+        font-weight: bold;
+        text-decoration: none;
+    }  
+    /* date update */
+    header>h2 {
+        color: #777;
+        clear: right;
+        float: right;
+        font-style: italic;
+        font-size: 14px;
+        margin: 0px 15px -15px 0;
+    }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 顶部菜单栏 */
 nav {
@@ -64,32 +64,32 @@ height: 40px;
 margin: 0 auto;
 margin-top: -5px;
 }
-/* 菜单栏 */
-nav .menu {
-font-size: 25px;
-font-weight: bold;
-}
-nav .menu ul {
-margin: 0;
-padding: 17px 0 0 20px;
-list-style: none;
-line-height: normal;
-}
-nav .menu li {
-display: block;
-float: left;
-}
-nav .menu a {
-display: block;
-float: left;
-margin-right: 5px;
-padding: 0px 15px;
-text-decoration: none;
-color: #C00000; /*菜单栏字体颜色*/
-}
-nav .menu a:hover {
-text-decoration: underline;  /*菜单栏字体下划线*/
-}
+    /* 菜单栏 */
+    nav .menu {
+    font-size: 25px;
+    font-weight: bold;
+    }
+    nav .menu ul {
+    margin: 0;
+    padding: 17px 0 0 20px;
+    list-style: none;
+    line-height: normal;
+    }
+    nav .menu li {
+    display: block;
+    float: left;
+    }
+    nav .menu a {
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding: 0px 15px;
+    text-decoration: none;
+    color: #C00000; /*菜单栏字体颜色*/
+    }
+    nav .menu a:hover {
+    text-decoration: underline;  /*菜单栏字体下划线*/
+    }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 /* 正文布局 */
