@@ -208,8 +208,8 @@ footer {
     overflow: hidden;
     width: 940px;
     height: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 .footer-segment {
     float: left;
