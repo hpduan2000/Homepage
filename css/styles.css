@@ -199,32 +199,6 @@ width: 940px;
 margin: 0 auto;
 clear: both;
 }
-
-/* basics */
-
-
-
-
-
-
-
-/* p {
-margin-bottom: 18px;
-}
-
-li {
-padding-left: 5px;
-} */
-
-
-
-
-
-
-
-
-
-/* 页面底部 */
 #footer-area {
 background: #121212;
 color: #E1DFDF;
@@ -233,60 +207,19 @@ padding: 18px 0;
 overflow: hidden;
 width: 940px;
 height: 10px;
-/* curved border radius */
 -moz-border-radius-bottomright: 8px;
 -moz-border-radius-bottomleft: 8px;
 -webkit-border-bottom-left-radius: 8px;
 -webkit-border-bottom-right-radius: 8px;
 }
-
 .footer-segment {
 float: left;
 width: 940px;
 margin-top: -7px;
 }
-
 footer aside h4 {
-color: #000000;
+color: #4DBEEE;
 font-size: 18px;
 margin-left: 10px;
 /* margin: 0 0 20px 0; */
 }
-
-footer aside h5 {
-color: #000000;
-font-size: 14px;
-font-weight: normal;
-margin: 0 0 20px 0;
-}
-
-footer ul {
-list-style: none;
-margin-left: 5px;
-}
-
-footer a:link, footer a:visited {
-color: #000000;
-}
-
-footer a:hover { 
-text-decoration: underline; 
-}
-
-footer p {
-margin-left: 10px;
-}
-
-.footer-links {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-}
-
-.footer-links b {
-flex: 0 0 15%;
-margin: 5px;
-margin-bottom: -20px;
-}
-
-
