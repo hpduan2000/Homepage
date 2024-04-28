@@ -137,11 +137,31 @@ overflow: hidden;
 
     /* 中间内容 */
     #content {
-    float: left;
-    width: 680px;
-    margin-left: 20px;
-    margin-right: 20px;
+        float: left;
+        width: 680px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
+    #content p, ul, ol, hr {
+        margin-bottom: 12px;
+        margin-top: 5px;
+    }
+    #content ul ul, ol ol, ul ol, ol ul {
+        margin-bottom: 0;
+    }
+    #content h1, h2, h3, h4, h5, h6 {
+        color: #E1DFDF;
+        margin: 0 0 0 0;
+        line-height: 1.5em;
+    }
+
+
+
+
+
+
+
+
 
 
 /* 底部 */
@@ -182,18 +202,7 @@ article{
     text-align: justify;
     line-height: 1.5;
 }
-#content p, ul, ol, hr {
-margin-bottom: 12px;
-margin-top: 5px;
-}
-#content ul ul, ol ol, ul ol, ol ul {
-margin-bottom: 0;
-}
-#content h1, h2, h3, h4, h5, h6 {
-color: #333;
-margin: 0 0 0 0;
-line-height: 1.5em;
-}
+
 
 .alignleft, img.alignleft {
 display: inline;
