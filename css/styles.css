@@ -5,18 +5,18 @@ padding: 0;
 
 /* html 5 */
 header, footer, section, aside, nav, article {
-display: block;
+    display: block;
 }
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 总体背景及字体颜色 */
 body {
-line-height: 1;
-font-family: Arial, Helvetica, sans-serif;
-color: #E1DFDF;   /* 字体颜色 */
-font-size: 14px;
-line-height: 18px;
-background-color: #121212;  /* 总体背景 */
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #E1DFDF;   /* 字体颜色 */
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #121212;  /* 总体背景 */
 }
 h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
@@ -26,83 +26,81 @@ h1,h2,h3,h4,h5,h6 {
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 外圈框线 */
 #wrapper {
-width: 940px;
-margin: 0 auto;
-margin-top: 20px;
-margin-bottom: 20px;
-border: 3px solid #606060;   /* 外圈框线颜色 */
-/* -moz-border-radius: 10px;  */
-/* -webkit-border-radius: 10px; */
-border-radius: 10px;
+    width: 940px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #606060;   /* 外圈框线颜色 */
+    border-radius: 10px;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 抬头header */
 header {
     padding: 20px 0 0 0;
 }  
-    /* Welcome to My Academic Homepage */
-    header>h1 {
-        float: left;
-        margin: 0 0 18px 10px;
-        width: 940px;
-        font-size: 40px;
-        line-height: 36px;
-        color: #DC98FF;
-        font-weight: bold;
-        text-decoration: none;
-    }  
-    /* date update */
-    header>h2 {
-        color: #777;
-        clear: right;
-        float: right;
-        font-style: italic;
-        font-size: 14px;
-        margin: 0px 15px -15px 0;
-    }
+/* Welcome to My Academic Homepage */
+header>h1 {
+    float: left;
+    margin: 0 0 18px 10px;
+    width: 940px;
+    font-size: 40px;
+    line-height: 36px;
+    color: #DC98FF;
+    font-weight: bold;
+    text-decoration: none;
+}  
+/* date update */
+header>h2 {
+    color: #777;
+    clear: right;
+    float: right;
+    font-style: italic;
+    font-size: 14px;
+    margin: 0px 15px -15px 0;
+}
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 顶部菜单栏 */
 nav {
-width: 940px;
-height: 40px;
-margin: 0 auto;
-margin-top: -5px;
+    width: 940px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: -5px;
 }
-    /* 菜单栏 */
-    nav .menu {
+/* 菜单栏 */
+nav .menu {
     font-size: 25px;
     font-weight: bold;
-    }
-    nav .menu ul {
+}
+nav .menu ul {
     margin: 0;
     padding: 17px 0 0 20px;
     list-style: none;
     line-height: normal;
-    }
-    nav .menu li {
+}
+nav .menu li {
     display: block;
     float: left;
-    }
-    nav .menu a {
+}
+nav .menu a {
     display: block;
     float: left;
     margin-right: 5px;
     padding: 0px 15px;
     text-decoration: none;
     color: #C00000; /*菜单栏字体颜色*/
-    }
-    nav .menu a:hover {
+}
+nav .menu a:hover {
     text-decoration: underline;  /*菜单栏字体下划线*/
-    }
+}
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 /* 正文布局 */
 /* 总宽度940px */
 #main {
-width: 940px;
-margin: 0 auto;
-padding-top: 30px;
-overflow: hidden;
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 30px;
+    overflow: hidden;
 }
     /* 左边侧栏 */
     #sidebar1 {
