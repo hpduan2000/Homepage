@@ -45,7 +45,7 @@ header>h1 {
     width: 940px;
     font-size: 40px;
     line-height: 36px;
-    color: #DC98FF;
+    color: #4DBEEE;
     font-weight: bold;
     text-decoration: none;
 }  
@@ -87,7 +87,7 @@ nav .menu a {
     margin-right: 5px;
     padding: 0px 15px;
     text-decoration: none;
-    color: #C00000; /*菜单栏字体颜色*/
+    color: #A2142F; /*菜单栏字体颜色*/
 }
 nav .menu a:hover {
     text-decoration: underline;  /*菜单栏字体下划线*/
@@ -165,7 +165,7 @@ article img {
     border: none;
 }
 a:link, a:visited {
-    color:#DC98FF;
+    color:#4DBEEE;
 }
 a:hover, a:active {
     color:#E1DFDF;
