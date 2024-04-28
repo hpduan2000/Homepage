@@ -118,7 +118,7 @@ overflow: hidden;
             text-align: left;
             justify-content: center;
         }
-        .sidebar a:link, .sidebar a:visited .sidebar h4 {
+        .sidebar a:link, .sidebar a:visited {
             color: #E1DFDF;  /* 字体颜色 */
         }
         .sidebar img {
