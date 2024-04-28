@@ -194,40 +194,63 @@ img.alignleft, img.alignright, img.aligncenter {
 
 
 /* 底部 */
-/* footer {
-width: 940px;
-margin: 0 auto;
-clear: both;
-height: 10px;
-}
-#footer-area {
-background: #252525;
-font-size: 18px;
-color: #4DBEEE;
-padding: 10px 0;
-overflow: hidden;
-width: 940px;
-height: 10px;
--moz-border-radius-bottomright: 8px;
--moz-border-radius-bottomleft: 8px;
-} */
-
 footer {
     width: 940px;
-    height: 20px;
-    background-color: #252525; /* 设置底部背景颜色 */
-    color: #4DBEEE; /* 设置文字颜色 */
-    font-size: 18px;
-    text-align: center; /* 设置文本居中 */
-    margin-bottom: -10px;
+    margin: 0 auto;
+    clear: both;
 }
 
-
-/* .footer-segment {
-float: left;
-width: 940px;
-margin-top: -7px;
-background-color: #252525;
-border-radius: 20px;
-} */
-
+/* 页面底部 */
+#footer-area {
+    background: #F1F1F1;
+    color: #000000;
+    font-size: 90%;
+    padding: 18px 0;
+    overflow: hidden;
+    width: 940px;
+    height: 10px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    /* -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px; */
+}
+.footer-segment {
+    float: left;
+    width: 940px;
+    margin-top: -7px;
+}
+footer aside h4 {
+    color: #000000;
+    font-size: 18px;
+    margin-left: 10px;
+    /* margin: 0 0 20px 0; */
+}
+footer aside h5 {
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+}
+footer ul {
+    list-style: none;
+    margin-left: 5px;
+}
+footer a:link, footer a:visited {
+    color: #000000;
+}
+footer a:hover { 
+    text-decoration: underline; 
+}
+footer p {
+    margin-left: 10px;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.footer-links b {
+    flex: 0 0 15%;
+    margin: 5px;
+    margin-bottom: -20px;
+}
