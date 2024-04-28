@@ -116,7 +116,7 @@ overflow: hidden;
             text-align: left;
             justify-content: center;
         }
-        .sidebar a:link, .sidebar a:visited{
+        .sidebar a:link, .sidebar a:visited, .sidebar h4{
             color: #E1DFDF;  /* 字体颜色 */
         }
         .sidebar img {
@@ -133,20 +133,15 @@ overflow: hidden;
         .icon-link i {
             margin-right: 10px;
         }
-        aside h4 {
-            font-size: 17px;
-            color: #E1DFDF;
-        }
 
 
-/* 中间内容 */
-#content {
-float: left;
-width: 680px;
-margin-left: 20px;
-margin-right: 20px;
-background-color: #121212;
-}
+    /* 中间内容 */
+    #content {
+    float: left;
+    width: 680px;
+    margin-left: 20px;
+    margin-right: 20px;
+    }
 
 
 /* 底部 */
