@@ -201,6 +201,10 @@ clear: both;
 height: 10px;
 -moz-border-radius-bottomright: 8px;
 -moz-border-radius-bottomleft: 8px;
+background: #252525;
+color: #4DBEEE;
+font-size: 18px;
+padding-left: 10px;
 }
 /* #footer-area {
 background: #252525;
@@ -221,11 +225,6 @@ margin-top: -7px;
 background-color: #252525;
 border-radius: 20px;
 } */
-footer h4 {
-color: #4DBEEE;
-font-size: 18px;
-margin-left: 10px;
-}
 
 
 
