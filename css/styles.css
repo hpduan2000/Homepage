@@ -219,7 +219,7 @@ footer {
     color: #4DBEEE; /* 设置文字颜色 */
     padding: 20px; /* 设置内边距 */
     text-align: center; /* 设置文本居中 */
-    position: fixed; /* 固定在底部 */
+    /*position: fixed;  固定在底部 */
     left: 0; /* 距离左侧位置 */
     bottom: 0; /* 距离底部位置 */
     width: 100%; /* 宽度为100% */
