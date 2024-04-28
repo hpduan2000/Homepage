@@ -103,64 +103,64 @@ nav .menu a:hover {
     overflow: hidden;
 }
     /* 左边侧栏 */
-    #sidebar1 {
-        float: left;
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 200px;
-    }
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-            justify-content: center;
-        }
-        .sidebar a:link, .sidebar a:visited, .sidebar h4{
-            color: #E1DFDF;  /* 字体颜色 */
-        }
-        .sidebar img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        .icon-link {
-            margin-bottom: 10px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
+#sidebar1 {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 200px;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+}
+.sidebar a:link, .sidebar a:visited, .sidebar h4{
+    color: #E1DFDF;  /* 字体颜色 */
+}
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.icon-link {
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
 
 
-    /* 中间内容 */
-    #content {
-        float: left;
-        width: 680px;
-        margin-right: 20px;
-    }
-    #content p, ul, ol, hr {
-        margin-bottom: 12px;
-        margin-top: 5px;
-    }
-    #content ul ul, ol ol, ul ol, ol ul {
-        margin-bottom: 0;
-    }
-    #content h1, h2, h3, h4, h5, h6 {
-        color: #E1DFDF;
-        margin: 0 0 0 0;
-        line-height: 1.5em;
-    }
-    article {
-        text-align: justify;
-        line-height: 1.5;
-        background-color: #252525;
-        border-radius: 20px;
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        margin-bottom: 15px;
-    }
+/* 中间内容 */
+#content {
+    float: left;
+    width: 680px;
+    margin-right: 20px;
+}
+#content p, ul, ol, hr {
+    margin-bottom: 12px;
+    margin-top: 5px;
+}
+#content ul ul, ol ol, ul ol, ol ul {
+    margin-bottom: 0;
+}
+#content h1, h2, h3, h4, h5, h6 {
+    color: #E1DFDF;
+    margin: 0 0 0 0;
+    line-height: 1.5em;
+}
+article {
+    text-align: justify;
+    line-height: 1.5;
+    background-color: #252525;
+    border-radius: 20px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 15px;
+}
 
 
 
