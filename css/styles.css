@@ -167,9 +167,9 @@ article img {
 a:link, a:visited {
     color:#DC98FF;
 }
-/* a:hover, a:active {
-color: #000000;
-} */
+a:hover, a:active {
+    color:#E1DFDF;
+}
 .alignleft, img.alignleft {
     display: inline;
     float: left;
