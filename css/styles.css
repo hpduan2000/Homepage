@@ -13,10 +13,10 @@ display: block;
 body {
 line-height: 1;
 font-family: Arial, Helvetica, sans-serif;
-color: #E1DFDF;
+color: #E1DFDF;   /* 字体颜色 */
 font-size: 14px;
 line-height: 18px;
-background-color: #121212;
+background-color: #121212;  /* 总体背景 */
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 外圈框线 */
@@ -98,9 +98,30 @@ text-decoration: underline;  /*菜单栏字体下划线*/
 width: 940px;
 margin: 0 auto;
 padding-top: 30px;
-background-color: #121212;
 overflow: hidden;
 }
+    /* 左边侧栏 */
+    #sidebar1 {
+        float: left;
+        padding-left: 20px;
+        width: 180px;
+    }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            justify-content: center;
+        }
+        .sidebar a:link, .sidebar a:visited {
+            color: #E1DFDF;  /* 字体颜色 */
+        }
+        .sidebar img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
 /* 中间内容 */
 #content {
 float: left;
@@ -109,12 +130,7 @@ margin-left: 20px;
 margin-right: 20px;
 background-color: #121212;
 }
-/* 左边侧栏 */
-#sidebar1 {
-float: left;
-padding-left: 20px;
-width: 180px;
-}
+
 
 /* 底部 */
 footer {
@@ -205,23 +221,7 @@ aside ul {
     margin: 5px 0 15px 25px;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-}
-    
-.sidebar a:link, .sidebar a:visited {
-    color: #000000;
-}
 
-.sidebar img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
     
 .icon-link {
     margin-bottom: 10px;
