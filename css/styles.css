@@ -104,7 +104,6 @@ width: 940px;
 margin: 0 auto;
 padding-top: 30px;
 overflow: hidden;
-color: #E1DFDF;
 }
     /* 左边侧栏 */
     #sidebar1 {
@@ -127,6 +126,15 @@ color: #E1DFDF;
             height: auto;
             margin-bottom: 10px;
         }
+        .icon-link {
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .icon-link i {
+            margin-right: 10px;
+        }
 
 
     /* aside h3 {
@@ -137,15 +145,7 @@ color: #E1DFDF;
         list-style: square;
         margin: 5px 0 15px 25px;
     }
-    .icon-link {
-        margin-bottom: 10px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
-    .icon-link i {
-        margin-right: 10px;
-    } */
+
 
 /* 中间内容 */
 #content {
