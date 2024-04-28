@@ -18,6 +18,11 @@ font-size: 14px;
 line-height: 18px;
 background-color: #121212;  /* 总体背景 */
 }
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+    clear: both;
+    color: #E1DFDF;
+}
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 外圈框线 */
 #wrapper {
@@ -113,7 +118,7 @@ overflow: hidden;
             text-align: left;
             justify-content: center;
         }
-        .sidebar a:link, .sidebar a:visited {
+        .sidebar a:link, .sidebar a:visited h4 {
             color: #E1DFDF;  /* 字体颜色 */
         }
         .sidebar img {
@@ -141,11 +146,7 @@ clear: both;
 
 /* basics */
 
-h1,h2,h3,h4,h5,h6 {
-font-weight: bold;
-clear: both;
-color: #E1DFDF;
-}
+
 
 a:link, a:visited {
 color:#DC98FF;
