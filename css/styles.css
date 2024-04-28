@@ -8,6 +8,8 @@ header, footer, section, aside, nav, article {
 display: block;
 }
 
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* 总体背景及字体颜色 */
 body {
 line-height: 1;
 font-family: Arial, Helvetica, sans-serif;
@@ -16,7 +18,7 @@ font-size: 14px;
 line-height: 18px;
 background-color: #121212;
 }
-    
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 外圈框线 */
 #wrapper {
 width: 940px;
@@ -24,17 +26,17 @@ margin: 0 auto;
 margin-top: 20px;
 margin-bottom: 20px;
 border: 3px solid #b2b2b2;
-background: #121212;
+/* background: #121212; */
 /* curved border radius */
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
+/* -moz-border-radius: 10px; */
+/* -webkit-border-radius: 10px; */
 }
-/* 外圈框线完成 */
-
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 抬头header */
 header {
     padding: 20px 0 0 0;
 }  
+/* Welcome to My Academic Homepage */
 header>h1 {
     float: left;
     margin: 0 0 18px 10px;
@@ -45,6 +47,7 @@ header>h1 {
     font-weight: bold;
     text-decoration: none;
 }  
+/* date update */
 header>h2 {
     color: #777;
     clear: right;
@@ -53,18 +56,14 @@ header>h2 {
     font-size: 14px;
     margin: 0px 15px -15px 0;
 }
-/* 抬头header */
-
-/* 抬头背景 */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* 顶部菜单栏 */
 nav {
 width: 940px;
 height: 40px;
 margin: 0 auto;
-/* background: #000000; */
 margin-top: -5px;
 }
-/* 抬头背景 */
-
 /* 菜单栏 */
 nav .menu {
 font-size: 25px;
@@ -86,12 +85,12 @@ float: left;
 margin-right: 5px;
 padding: 0px 15px;
 text-decoration: none;
-color: #C00000;
+color: #C00000; /*菜单栏字体颜色*/
 }
 nav .menu a:hover {
-text-decoration: underline;
+text-decoration: underline;  /*菜单栏字体下划线*/
 }
-/* 菜单栏 */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 /* 正文布局 */
 /* 总宽度940px */
