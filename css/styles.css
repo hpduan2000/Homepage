@@ -161,13 +161,35 @@ article {
     padding-bottom: 0.5em;
     margin-bottom: 15px;
 }
-
-
-
-
-
-
-
+article img {
+    border: none;
+}
+a:link, a:visited {
+    color:#DC98FF;
+}
+/* a:hover, a:active {
+color: #000000;
+} */
+.alignleft, img.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.alignright, img.alignright {
+    display: inline;
+    float: right;
+    margin-left: 10px;
+}
+.aligncenter, img.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.alignleft, img.alignright, img.aligncenter {
+    margin-bottom: 10px;
+}
 
 
 
@@ -182,55 +204,17 @@ clear: both;
 
 
 
-a:link, a:visited {
-color:#DC98FF;
-}
 
 
-a:hover, a:active {
-color: #000000;
-}
 
-p {
+
+/* p {
 margin-bottom: 18px;
 }
 
 li {
 padding-left: 5px;
-}
-
-/** 中间正文 **/
-article img {
-border: none;
-/* -webkit-box-shadow: 3px 3px 7px #777;
--moz-box-shadow: 3px 3px 7px #777; */
-}
-
-
-
-.alignleft, img.alignleft {
-display: inline;
-float: left;
-margin-right: 10px;
-margin-top: 10px;
-}
-.alignright, img.alignright {
-display: inline;
-float: right;
-margin-left: 10px;
-}
-.aligncenter, img.aligncenter {
-clear: both;
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
-img.alignleft, img.alignright, img.aligncenter {
-margin-bottom: 10px;
-}
-
-/* sidebar and footer widget blocks */
-
+} */
 
 
 
