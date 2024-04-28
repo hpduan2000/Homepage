@@ -105,8 +105,9 @@ nav .menu a:hover {
     /* 左边侧栏 */
     #sidebar1 {
         float: left;
-        padding-left: 20px;
-        width: 180px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 200px;
     }
         .sidebar {
             display: flex;
@@ -137,8 +138,7 @@ nav .menu a:hover {
     /* 中间内容 */
     #content {
         float: left;
-        width: 640px;
-        margin-left: 20px;
+        width: 680px;
         margin-right: 20px;
     }
     #content p, ul, ol, hr {
