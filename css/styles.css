@@ -214,15 +214,14 @@ height: 10px;
 
 footer {
     width: 940px;
-    height: 20px;
+    height: 10px;
     background-color: #252525; /* 设置底部背景颜色 */
     color: #4DBEEE; /* 设置文字颜色 */
-    padding: 20px; /* 设置内边距 */
+    font-size: 18px;
     text-align: center; /* 设置文本居中 */
-    /*position: fixed;  固定在底部 */
     left: 0; /* 距离左侧位置 */
     bottom: 0; /* 距离底部位置 */
-    width: 100%; /* 宽度为100% */
+
 }
 
 
@@ -234,16 +233,3 @@ background-color: #252525;
 border-radius: 20px;
 } */
 
-
-
-/* article {
-    text-align: justify;
-    line-height: 1.5;
-    background-color: #252525;
-    border-radius: 20px;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: 15px;
-} */
