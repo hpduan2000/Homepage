@@ -198,8 +198,11 @@ footer {
 width: 940px;
 margin: 0 auto;
 clear: both;
+height: 10px;
+-moz-border-radius-bottomright: 8px;
+-moz-border-radius-bottomleft: 8px;
 }
-#footer-area {
+/* #footer-area {
 background: #252525;
 font-size: 90%;
 padding: 18px 0;
@@ -210,7 +213,7 @@ height: 10px;
 -moz-border-radius-bottomleft: 8px;
 -webkit-border-bottom-left-radius: 8px;
 -webkit-border-bottom-right-radius: 8px;
-}
+} */
 /* .footer-segment {
 float: left;
 width: 940px;
@@ -218,7 +221,7 @@ margin-top: -7px;
 background-color: #252525;
 border-radius: 20px;
 } */
-footer aside h4 {
+footer h4 {
 color: #4DBEEE;
 font-size: 18px;
 margin-left: 10px;
