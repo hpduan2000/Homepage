@@ -215,11 +215,11 @@ footer {
     float: left;
     width: 940px;
     margin-top: -7px;
+    text-align: center;
 }
 footer aside h4 {
     color: #4DBEEE;
     font-size: 18px;
-    margin-left: 10px;
 }
 /* footer aside h5 {
     color: #000000;
