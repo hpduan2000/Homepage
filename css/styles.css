@@ -199,25 +199,20 @@ width: 940px;
 margin: 0 auto;
 clear: both;
 height: 10px;
--moz-border-radius-bottomright: 8px;
--moz-border-radius-bottomleft: 8px;
-background: #252525;
-color: #4DBEEE;
-font-size: 18px;
-padding-left: 10px;
 }
-/* #footer-area {
+#footer-area {
 background: #252525;
-font-size: 90%;
-padding: 18px 0;
+font-size: 18px;
+color: #4DBEEE;
+padding: 10px 0;
 overflow: hidden;
 width: 940px;
 height: 10px;
 -moz-border-radius-bottomright: 8px;
 -moz-border-radius-bottomleft: 8px;
--webkit-border-bottom-left-radius: 8px;
--webkit-border-bottom-right-radius: 8px;
-} */
+/* -webkit-border-bottom-left-radius: 8px;
+-webkit-border-bottom-right-radius: 8px; */
+}
 /* .footer-segment {
 float: left;
 width: 940px;
