@@ -200,8 +200,7 @@ margin: 0 auto;
 clear: both;
 }
 #footer-area {
-background: #121212;
-color: #E1DFDF;
+background: #252525;
 font-size: 90%;
 padding: 18px 0;
 overflow: hidden;
@@ -212,18 +211,17 @@ height: 10px;
 -webkit-border-bottom-left-radius: 8px;
 -webkit-border-bottom-right-radius: 8px;
 }
-.footer-segment {
+/* .footer-segment {
 float: left;
 width: 940px;
 margin-top: -7px;
 background-color: #252525;
 border-radius: 20px;
-}
+} */
 footer aside h4 {
 color: #4DBEEE;
 font-size: 18px;
 margin-left: 10px;
-/* margin: 0 0 20px 0; */
 }
 
 
