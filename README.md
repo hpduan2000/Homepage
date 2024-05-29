@@ -1,2 +1,2 @@
-# Three swordsmen | Central South University
+# Three swordsmen
 Copyright by 2022-2024 hpduan2000@csu.edu.cn Inc. All Rights Reserved.
