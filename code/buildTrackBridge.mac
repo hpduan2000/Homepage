@@ -1,0 +1,789 @@
+!ÇÅÉÏµ××ù°å!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!(1)Éú³ÉÓÒ¹Ø¼üµã,Á¬½ÓÓÒµ××ù°å£¬ÓÉ¹Ø¼üµãK¶¨Òå½ÚµãN£¬¶¨Î»ÔÚ°å½ØÃæÖÐÐÄ£¬¿¼ÂÇSLºñ¶È      
+*do,i,1,n,1                               
+k,1100+i,bzxd,hdch+dzbh/2,(i-1)*lc+(i-1)*d                 
+k,1200+i,bzxd,hdch+dzbh/2,i*lc+(i-1)*d                                                
+l,1100+i,1200+i 
+latt,4,,1,,102,,3000                                                
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1                                                                            
+l,1100+i+1,1200+i 
+latt,4,,1,,102,,3000                                                                      
+lesize,all,,,1   
+lmesh,all                    
+*enddo 
+!»ñÈ¡ÓÒµ××ù°å½á¹¹µã
+allsel,all
+*dim,ydzb,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(bzxd,hdch+dzbh/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ydzb((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+!(2)Éú³ÉÓÒ¸Õ±Ûµã
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+n,20000+(wghf+1)*(i-1)+j,bzxd,0,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf
+n,30000+(wghf+1)*(i-1)+j,bzxd,hdch+dzbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf                      
+*enddo
+*enddo
+
+
+
+!(3)Éú³É×ó¹Ø¼üµã,Á¬½Ó×óµ××ù°å            	  
+*do,i,1,n,1                               
+k,1300+i,-bzxd,hdch+dzbh/2,(i-1)*lc+(i-1)*d                 
+k,1400+i,-bzxd,hdch+dzbh/2,i*lc+(i-1)*d                                                   
+l,1300+i,1400+i 
+latt,4,,1,,103,,3000                                                
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1
+l,1300+i+1,1400+i 
+latt,4,,1,,103,,3000                                                
+lesize,all,,,1  
+lmesh,all                                          
+*enddo 
+!»ñÈ¡×óµ××ù°å½Úµã
+allsel,all
+*dim,zdzb,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(-bzxd,hdch+dzbh/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+zdzb((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+
+!(4)Éú³É×ó¸Õ±Ûµã
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+n,40000+(wghf+1)*(i-1)+j,-bzxd,0,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf
+n,50000+(wghf+1)*(i-1)+j,-bzxd,hdch+dzbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf                      
+*enddo
+*enddo
+
+
+
+!(5)Á¬½Ó¸Õ±Û
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ydzb((wghf+1)*(i-1)+j),20000+(wghf+1)*(i-1)+j
+e,ydzb((wghf+1)*(i-1)+j),30000+(wghf+1)*(i-1)+j
+e,zdzb((wghf+1)*(i-1)+j),40000+(wghf+1)*(i-1)+j
+e,zdzb((wghf+1)*(i-1)+j),50000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+!(6)Á¬½Óµ¯»É
+type,3                                               !»¬¶¯²ãºáÏò,ÀíÏëµ¯ËÜÐÔ
+real,3
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,20000+(wghf+1)*(i-1)+j,10000+(wghf+1)*(i-1)+j
+e,40000+(wghf+1)*(i-1)+j,11000+(wghf+1)*(i-1)+j                    
+*enddo
+*enddo
+
+type,16                                              !»¬¶¯¶¯²ãÊúÏò,½öÊÜÑ¹²»ÊÜÀ­, in linear Combin39
+real,57 
+! type,4
+! real,4
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,10000+(wghf+1)*(i-1)+j,20000+(wghf+1)*(i-1)+j    ! Áº¸Õ±Ûi - »¬¶¯²ãÏÂ¸Õ±Ûj
+e,11000+(wghf+1)*(i-1)+j,40000+(wghf+1)*(i-1)+j,                      
+*enddo
+*enddo
+
+! !!! Change into single-linear !!!
+! type,52                                              !»¬¶¯¶¯²ãÊúÏò,½öÊÜÑ¹²»ÊÜÀ­, in linear Combin39
+! real,152 
+! ! type,4
+! ! real,4
+! mat,8   ! ¿Õ²ÄÁÏ
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,20000+(wghf+1)*(i-1)+j,10000+(wghf+1)*(i-1)+j    ! Áº¸Õ±Ûj - »¬¶¯²ãÏÂ¸Õ±Ûi
+! e,40000+(wghf+1)*(i-1)+j,11000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+
+
+
+type,5                                              !»¬¶¯¶¯²ã×ÝÏò,ÀíÏëµ¯ËÜÐÔ                                              
+real,5
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,20000+(wghf+1)*(i-1)+j,10000+(wghf+1)*(i-1)+j
+e,40000+(wghf+1)*(i-1)+j,11000+(wghf+1)*(i-1)+j                     
+*enddo
+*enddo
+
+type,8                                              !»¬¶¯¶¯²ãÈÆZ×ª¶¯,µ¯ÐÔ
+real,8
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,20000+(wghf+1)*(i-1)+j,10000+(wghf+1)*(i-1)+j
+e,40000+(wghf+1)*(i-1)+j,11000+(wghf+1)*(i-1)+j                     
+*enddo
+*enddo
+
+! ¼ÇÂ¼ÓÒ²à¹ìµÀ»¬¶¯²ãÏÂ²à½Úµã±àºÅ
+*DIM,yHDCx,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yHDCx(i)=enextn(10000+i,2)
+*enddo
+
+*DIM,yHDCy,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yHDCy(i)=enextn(10000+i,3)
+*enddo
+
+*DIM,yHDCz,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yHDCz(i)=enextn(10000+i,4)
+*enddo
+
+
+
+
+
+
+
+!!ÇÅÉÏ¹ìµÀ°å!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!(1)Éú³ÉÓÒ¹Ø¼üµã,Á¬½ÓÓÒµ××ù°å£¬ÓÉ¹Ø¼üµãK¶¨Òå½ÚµãN£¬¶¨Î»ÔÚ°å½ØÃæÖÐÐÄ£¬¿¼ÂÇSLºñ¶È
+*do,i,1,n,1                               
+k,5000+i,bzxd,hdch+dzbh+CAsjc+gdbh/2,(i-1)*lc+(i-1)*d                 
+k,6000+i,bzxd,hdch+dzbh+CAsjc+gdbh/2,i*lc+(i-1)*d                                                
+l,5000+i,6000+i 
+latt,5,,1,,102,,4000                                               
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1                                                                            
+l,5000+i+1,6000+i 
+latt,5,,1,,102,,4000                                                                      
+lesize,all,,,1   
+lmesh,all                    
+*enddo 
+
+allsel,all
+*dim,ygdb,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(bzxd,hdch+dzbh+CAsjc+gdbh/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ygdb((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+!(2)Éú³ÉÓÒ¸Õ±Ûµã
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+n,60000+(wghf+1)*(i-1)+j,bzxd,hdch+dzbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf
+n,70000+(wghf+1)*(i-1)+j,bzxd,hdch+dzbh+CAsjc+gdbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf                      
+*enddo
+*enddo
+
+
+!(3)Éú³É×ó¹Ø¼üµã,Á¬½Ó×óµ××ù°å            	  
+*do,i,1,n,1                               
+k,7000+i,-bzxd,hdch+dzbh+CAsjc+gdbh/2,(i-1)*lc+(i-1)*d                 
+k,8000+i,-bzxd,hdch+dzbh+CAsjc+gdbh/2,i*lc+(i-1)*d                                                
+l,7000+i,8000+i 
+latt,5,,1,,103,,4000                                               
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1
+l,7000+i+1,8000+i 
+latt,5,,1,,103,,4000                                             
+lesize,all,,,1   
+lmesh,all                                          
+*enddo 
+
+!(4)Éú³É×ó¸Õ±Ûµã
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+n,80000+(wghf+1)*(i-1)+j,-bzxd,hdch+dzbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf
+n,90000+(wghf+1)*(i-1)+j,-bzxd,hdch+dzbh+CAsjc+gdbh,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf                      
+*enddo
+*enddo
+
+allsel,all
+*dim,zgdb,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(-bzxd,hdch+dzbh+CAsjc+gdbh/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+zgdb((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+
+!(5)Á¬½Ó¸Õ±Û
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ygdb((wghf+1)*(i-1)+j),60000+(wghf+1)*(i-1)+j
+e,ygdb((wghf+1)*(i-1)+j),70000+(wghf+1)*(i-1)+j
+e,zgdb((wghf+1)*(i-1)+j),80000+(wghf+1)*(i-1)+j
+e,zgdb((wghf+1)*(i-1)+j),90000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+!(6)Á¬½Óµ¯»É  CAM
+! type,3                                                !ºáÏòµ¯»É,ÀíÏëµ¯ËÜÐÔ ! Combin40
+! real,9
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+! e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                    
+! *enddo
+! *enddo
+! type,4                                               !ºáÏòµ¯»É,ÀíÏëµ¯ËÜÐÔ
+! real,10
+!!! Sliding-friction
+type,61                                                !ºáÏòµ¯»É,ÄóËõ»¬¶¯±¾¹¹ ! Combin39
+real,161
+mat,8  ! ¿Õ²ÄÁÏ
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                    
+*enddo
+*enddo
+
+
+type,16                                                !ÊúÏòµ¯»É,Ö»ÊÜÑ¹²»ÊÜÀ­
+real,54
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                     
+*enddo
+*enddo
+
+! type,5                                                !×ÝÏòµ¯»É,ÀíÏëµ¯ËÜÐÔ ! Combin40
+! real,11
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1  
+! e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+! e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                   
+! *enddo
+! *enddo
+!!! Sliding-friction
+type,63                                                !×ÝÏòµ¯»É,ÄóËõ»¬¶¯±¾¹¹ ! Combin39
+real,163
+mat,8  ! ¿Õ²ÄÁÏ
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                           
+*enddo
+*enddo
+
+type,8                                                !ÈÆ×ÝÏòµ¯»É,ÀíÏëµ¯ÐÔ
+real,14
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,30000+(wghf+1)*(i-1)+j,60000+(wghf+1)*(i-1)+j
+e,50000+(wghf+1)*(i-1)+j,80000+(wghf+1)*(i-1)+j                    
+*enddo
+*enddo
+
+
+! ¼ÇÂ¼CAMÏÂ²à½Úµã±àºÅ
+*DIM,yCAsjcx,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yCAsjcx(i)=enextn(30000+i,2)
+*enddo
+
+*DIM,yCAsjcy,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yCAsjcy(i)=enextn(30000+i,3)
+*enddo
+
+*DIM,yCAsjcz,array,10000,1   
+*do,i,1,n*(wghf+1),1
+yCAsjcz(i)=enextn(30000+i,4)
+*enddo
+
+
+
+
+
+
+!ÇÅÉÏ¸Ö¹ì1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!(1)Éú³ÉÓÒ¹Ø¼üµã,Á¬½ÓÓÒ¹ìµÀ°å£¬ÓÉ¹Ø¼üµãK¶¨Òå½ÚµãN£¬¶¨Î»ÔÚ°å½ØÃæÖÐÐÄ£¬¿¼ÂÇSLºñ¶È£¬¸Ö¹ì°ë¸ßÎªÖÐÐÄ
+*do,i,1,n,1      ! Áº¿ç                         
+k,9000+i,bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d                 
+k,10000+i,bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,i*lc+(i-1)*d                                                
+l,9000+i,10000+i 
+latt,6,,1,,104,,5000     !latt,mat(¸Ö¹ì),real(¿Õ),type(beam189),-,¹Ø¼üµãºÅ,,ÃæºÅ(CHN60)
+! latt,6,23,2,,104                                              
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  ! Áº·ì
+*do,i,1,n-1,1                                                                            
+l,9000+i+1,10000+i 
+latt,6,,1,,104,,5000   
+! latt,6,23,2,,104                                                                   
+lesize,all,,,1   
+lmesh,all                    
+*enddo 
+
+allsel,all
+*dim,ggone,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh/2+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ggone((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+!(2)Éú³ÉÓÒ¸Õ±Ûµã
+real,21
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+n,100000+(wghf+1)*(i-1)+j,bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf   !½¨Á¢¸Ö¹ìµ×²¿µÄ¸Õ±Ûµã
+*enddo
+*enddo
+
+
+!(3)Á¬½Ó¸Õ±Û
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,100000+(wghf+1)*(i-1)+j,70000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+
+!(4)Á¬½Óµ¯»É£¬¿Û¼þ
+! type,9                   ! ºáÖáXµÄ¸Õ¶È ! Combin39                                                  
+! real,15
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,3                   ! ºáÖáXµÄ¸Õ¶È ! Combin40                                                  
+real,171
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,10                  ! ÊúÖáYµÄ¸Õ¶È ! Combin39                                                    
+real,16
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+! type,11                  ! ×ÝÖáZµÄ¸Õ¶È ! Combin39                                                     
+! real,17
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,5                  ! ×ÝÖáZµÄ¸Õ¶È ! Combin40                                                     
+real,173
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,8                   ! ÈÆ×ÝÖáZµÄ×ª¶¯¸Õ¶È ! Combin14                            
+real,20
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggone((i-1)*(wghf+1)+j),100000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+
+
+
+
+
+! ¿Û¼þ½Úµã±àºÅ´æ´¢
+*DIM,koujian1x,array,10000,1   
+*do,i,1,n*(wghf+1),1
+koujian1x(i)=enextn(100000+i,2)
+*enddo
+
+*DIM,koujian1y,array,10000,1   
+*do,i,1,n*(wghf+1),1
+koujian1y(i)=enextn(100000+i,3)
+*enddo
+
+*DIM,koujian1z,array,10000,1   
+*do,i,1,n*(wghf+1),1
+koujian1z(i)=enextn(100000+i,4)
+*enddo
+
+
+
+
+
+
+
+
+!ï¿½ï¿½ï¿½Ï¸Ö¹ï¿½2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!(1)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹Ø¼ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ó¸Ö¹ï¿½2        	  
+*do,i,1,n,1                               
+k,11000+i,bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d                 
+k,12000+i,bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,i*lc+(i-1)*d                                                
+l,11000+i,12000+i 
+latt,6,,1,,105,,5000  
+! latt,6,23,2,,105                                             
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1                                                                            
+l,11000+i+1,12000+i 
+latt,6,,1,,105,,5000  
+! latt,6,23,2,,105                                                                   
+lesize,all,,,1  
+lmesh,all                    
+*enddo 
+
+allsel,all
+*dim,ggtwo,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh/2+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ggtwo((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+
+!(2)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸Õ±Ûµï¿½
+real,21
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+n,110000+(wghf+1)*(i-1)+j,bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf   !ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½×²ï¿½ï¿½Ä¸Õ±Ûµï¿?
+*enddo
+*enddo
+
+!(3)ï¿½ï¿½ï¿½Ó¸Õ±ï¿½
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,110000+(wghf+1)*(i-1)+j,70000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+!(4)ï¿½ï¿½ï¿½Óµï¿½ï¿½É£ï¿½ï¿½Û¼ï¿½
+! type,9                                               
+! real,15
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,3                   ! ï¿½ï¿½ï¿½ï¿½Xï¿½Ä¸Õ¶ï¿½ ! Combin40                                                  
+real,171
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,10                                               
+real,16
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+! type,11                                               
+! real,17
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,5                   ! ï¿½ï¿½ï¿½ï¿½Zï¿½Ä¸Õ¶ï¿½ ! Combin40                                                  
+real,173
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,8                                               
+real,20
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggtwo((i-1)*(wghf+1)+j),110000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+
+
+
+
+
+
+! !ï¿½ï¿½ï¿½Ï¸Ö¹ï¿½3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!(1)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹Ø¼ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½å£¬ï¿½É¹Ø¼ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½ï¿½Úµï¿½Nï¿½ï¿½ï¿½ï¿½Î»ï¿½Ú°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½SLï¿½ï¿½È£ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½Î?ï¿½ï¿½ï¿½ï¿½            	  
+*do,i,1,n,1                               
+k,13000+i,-bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d                 
+k,14000+i,-bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,i*lc+(i-1)*d                                                
+l,13000+i,14000+i 
+latt,6,,1,,106,,5000    
+! latt,6,23,2,,106                                           
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1                                                                            
+l,13000+i+1,14000+i 
+latt,6,,1,,106,,5000    
+! latt,6,23,2,,106                                                                  
+lesize,all,,,1   
+lmesh,all                    
+*enddo 
+
+
+allsel,all
+*dim,ggthree,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(-bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh/2+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ggthree((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+
+!(2)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸Õ±Ûµï¿½
+real,21
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+n,120000+(wghf+1)*(i-1)+j,-bzxd+ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf   !ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½×²ï¿½ï¿½Ä¸Õ±Ûµï¿?
+*enddo
+*enddo
+
+!(3)ï¿½ï¿½ï¿½Ó¸Õ±ï¿½
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,120000+(wghf+1)*(i-1)+j,90000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+!(4)ï¿½ï¿½ï¿½Óµï¿½ï¿½É£ï¿½ï¿½Û¼ï¿½
+! type,9                                              
+! real,15
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,3                   ! ï¿½ï¿½ï¿½ï¿½Xï¿½Ä¸Õ¶ï¿½ ! Combin40                                                  
+real,171
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,10                                              
+real,16
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+! type,11                                              
+! real,17
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,5                  ! ï¿½ï¿½ï¿½ï¿½Zï¿½Ä¸Õ¶ï¿½ ! Combin40                                                     
+real,173
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,8                                               
+real,20
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggthree((i-1)*(wghf+1)+j),120000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+
+
+
+
+
+!ï¿½ï¿½ï¿½Ï¸Ö¹ï¿½4!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!(1)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹Ø¼ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½å£¬ï¿½É¹Ø¼ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½ï¿½Úµï¿½Nï¿½ï¿½ï¿½ï¿½Î»ï¿½Ú°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½SLï¿½ï¿½È£ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½Î?ï¿½ï¿½ï¿½ï¿½            	  
+*do,i,1,n,1                               
+k,15000+i,-bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d                 
+k,16000+i,-bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,i*lc+(i-1)*d                                                
+l,15000+i,16000+i 
+latt,6,,1,,107,,5000     
+! latt,6,23,2,,107                                          
+lesize,all,lc/wghf                       
+lmesh,all                        
+*enddo  
+*do,i,1,n-1,1                                                                            
+l,15000+i+1,16000+i 
+latt,6,,1,,107,,5000         
+! latt,6,23,2,,107                                                            
+lesize,all,,,1   
+lmesh,all                    
+*enddo 
+
+
+allsel,all
+*dim,ggfour,array,10000
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+ND=node(-bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh/2+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf) 
+ggfour((i-1)*(wghf+1)+j)=ND
+*enddo
+*enddo
+
+!(2)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸Õ±Ûµï¿½
+real,21
+*do,i,1,n,1  
+*do,j,1,wghf+1,1 
+n,130000+(wghf+1)*(i-1)+j,-bzxd-ggzxj/2,hdch+dzbh+CAsjc+gdbh+gggd/2,(i-1)*lc+(i-1)*d+(j-1)*lc/wghf   !ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½×²ï¿½ï¿½Ä¸Õ±Ûµï¿?
+*enddo
+*enddo
+
+
+!(3)ï¿½ï¿½ï¿½Ó¸Õ±ï¿½
+type,2
+real,27
+mat,2
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,130000+(wghf+1)*(i-1)+j,90000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+!(4)ï¿½ï¿½ï¿½Óµï¿½ï¿½É£ï¿½ï¿½Û¼ï¿½
+! type,9                                               
+! real,15
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,3                   ! ï¿½ï¿½ï¿½ï¿½Xï¿½Ä¸Õ¶ï¿½ ! Combin40                                                  
+real,171
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,10                                             
+real,16
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+! type,11                                                
+! real,17
+! mat,8
+! *do,i,1,n,1    
+! *do,j,1,wghf+1,1                              
+! e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+! *enddo
+! *enddo
+!!! EPP
+type,5                   ! ï¿½ï¿½ï¿½ï¿½Xï¿½Ä¸Õ¶ï¿½ ! Combin40                                                  
+real,173
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+type,8                                               
+real,20
+mat,8
+*do,i,1,n,1    
+*do,j,1,wghf+1,1                              
+e,ggfour((i-1)*(wghf+1)+j),130000+(wghf+1)*(i-1)+j
+*enddo
+*enddo
+
+
+
+
+
+
