@@ -1,7 +1,6 @@
 # Get file list from target folder
-Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
-
-## function
+Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+## getFolderList.m
 ```matlab
 function list = getFolderList(path)
     file = dir(path);

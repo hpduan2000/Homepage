@@ -1,7 +1,7 @@
 # Shapiro-Wilk test
-Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
+Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
 
-## function
+## swtest.m
 ```matlab
 function [H, pValue, W] = swtest(x, alpha)
     % Ensure the sample data is a VECTOR

@@ -1,10 +1,6 @@
 # Statistical significance analysis (SSA)
-Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
-
-## subfunction
-(1) Shapiro-Wilk test: https://www.hpduan.cn/code/swtest.md
-
-## function
+Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+## SSA.m
 ```matlab
 function p2 = SSA(x,y,alpha)
     % Ensure the sample data is a VECTOR

@@ -1,7 +1,6 @@
 # Artificial synthesis pulse GMs
-Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
-
-## function
+Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+## SynthesisPulse.m
 ```matlab
 function v_APTR = SynthesisPulse(v_series, dt, Ap, fp, t0, gama, v_)
     % Random vibration simulation

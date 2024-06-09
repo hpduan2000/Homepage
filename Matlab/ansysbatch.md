@@ -1,8 +1,6 @@
 # Using Matlab for ANSYS Batch processing
-Written by H. P. Duan; hpduan2000@163.com; https://www.hpduan.cn  
-
-## function
-
+Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+## ansysbatch.m
 ```matlab
 function ansysbatch(working_path, ansys_path, np, jobname, mainMAC)
 	%...................................................
