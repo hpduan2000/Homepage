@@ -16,7 +16,7 @@ body {
     color: #000000;   /* 字体颜色 */
     font-size: 14px;
     line-height: 18px;
-    background-color: #b1b1b1;  /* 总体背景 */
+    background-color: #ffffff;  /* 总体背景 */
 }
 h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
@@ -218,7 +218,7 @@ footer {
     text-align: center;
 }
 footer aside h4 {
-    color: #000000;
+    color: #4DBEEE;
     font-size: 18px;
 }
 /* footer aside h5 {
