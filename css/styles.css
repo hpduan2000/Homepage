@@ -153,7 +153,7 @@ nav .menu a:hover {
 article {
     text-align: justify;
     line-height: 1.5;
-    /* background-color: #252525; */
+    background-color: #cacaca;
     border-radius: 20px;
     padding-left: 2em;
     padding-right: 2em;
@@ -201,7 +201,7 @@ footer {
 }
 /* 页面底部 */
 #footer-area {
-    background: #252525;
+    background: #cacaca;
     color: #000000;
     font-size: 90%;
     padding: 18px 0;
