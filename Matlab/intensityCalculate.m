@@ -1,7 +1,5 @@
-# intensity calculate
-Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
-## intensityCalculate.m
-```matlab
+% Ground motion intensity calculate
+% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
 function [PGA, Ds5, Ds75, Ds95] = intensityCalculate(wave, dt, units)
     %%% Unit
     if strcmp(units, 'g')
@@ -39,13 +37,10 @@ function [PGA, Ds5, Ds75, Ds95] = intensityCalculate(wave, dt, units)
     IaTime = pi/(2*g)*cumtrapz(time,acc.^2);   % Arias Intensity
     idStart = find(IaTime >= IaTime(end)*0.05,1,'first');
     Ds5 = time(idStart);  % D5% time
-
     idEnd = find(IaTime >= IaTime(end)*0.75,1,'first');  % D5-75
     Ds75 = time(idEnd);  % D75% time
     Ds5_75 = time(idEnd) - time(idStart);
-
     idEnd = find(IaTime >= IaTime(end)*0.95,1,'first');  % D5-95
     Ds5_95 = time(idEnd) - time(idStart);
     Ds95 = time(idEnd);  % D95% time
 end
-```

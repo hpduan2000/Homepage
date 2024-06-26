@@ -1,7 +1,5 @@
-# File format from PEER NGA-West2 database 
-Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
-## getAmpDtPEER.m
-```matlab
+% File format from PEER NGA-West2 database 
+% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
 function [wave, dt, NPTS, rsn] = getAmpDtPEER(filePath,fileName)
     fileid_shock = fopen([filePath,'/',fileName]);
     rsn = sscanf(char(fileName), 'RSN %f _');
@@ -24,4 +22,3 @@ function [wave, dt, NPTS, rsn] = getAmpDtPEER(filePath,fileName)
     wave(isnan(wave)) = [];
     fclose(fileid_shock);
 end
-```

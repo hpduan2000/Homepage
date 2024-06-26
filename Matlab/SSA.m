@@ -1,7 +1,5 @@
-# Statistical significance analysis (SSA)
-Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
-## SSA.m
-```matlab
+% Statistical significance analysis (SSA)
+% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
 function p2 = SSA(x,y,alpha)
     % Ensure the sample data is a VECTOR
     % make a log function transfor for origin datas
@@ -19,4 +17,3 @@ function p2 = SSA(x,y,alpha)
         p2 = ranksum(data1, data2);
     end
 end
-```

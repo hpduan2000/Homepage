@@ -1,7 +1,5 @@
-# Linear regression analysis
-Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
-## LinearRegress.m
-```matlab
+% Linear regression analysis
+% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
 function Results_Res = LinearRegress(x, y)
     [p,S] = polyfit(x,y,1);
     a = p(:,1); % Regression coefficients
@@ -20,4 +18,3 @@ function Results_Res = LinearRegress(x, y)
     kesi = beta/a; % general evaluate
     Results_Res = table(a, R2, beta, kesi);
 end
-```
