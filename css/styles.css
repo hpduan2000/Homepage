@@ -191,7 +191,18 @@ img.alignleft, img.alignright, img.aligncenter {
     margin-bottom: 10px;
 }
 
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.pdf-container object {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 /* 底部 */
 footer {
