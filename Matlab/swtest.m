@@ -1,5 +1,6 @@
-% Shapiro-Wilk test
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function [H, pValue, W] = swtest(x, alpha)
     % Ensure the sample data is a VECTOR
     if numel(x) == length(x)

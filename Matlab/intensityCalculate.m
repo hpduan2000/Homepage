@@ -1,5 +1,6 @@
-% Ground motion intensity calculate
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function [PGA, Ds5, Ds75, Ds95] = intensityCalculate(wave, dt, units)
     %%% Unit
     if strcmp(units, 'g')

@@ -1,5 +1,6 @@
-% Linear regression analysis
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function Results_Res = LinearRegress(x, y)
     [p,S] = polyfit(x,y,1);
     a = p(:,1); % Regression coefficients

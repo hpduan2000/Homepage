@@ -1,5 +1,6 @@
-% Statistical significance analysis (SSA)
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function p2 = SSA(x,y,alpha)
     % Ensure the sample data is a VECTOR
     % make a log function transfor for origin datas

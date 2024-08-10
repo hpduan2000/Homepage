@@ -1,5 +1,6 @@
-% Artificial synthesis pulse GMs
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function v_APTR = SynthesisPulse(v_series, dt, Ap, fp, t0, gama, v_)
     % Random vibration simulation
     % .....Start: set key pars

@@ -1,5 +1,6 @@
-% Using Matlab for ANSYS Batch processing
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function ansysbatch(working_path, ansys_path, np, jobname, mainMAC)
 	%...................................................
 	input_mac = strcat(working_path, '\', mainMAC);

@@ -1,5 +1,6 @@
-% File format from PEER NGA-West2 database 
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function [wave, dt, NPTS, rsn] = getAmpDtPEER(filePath,fileName)
     fileid_shock = fopen([filePath,'/',fileName]);
     rsn = sscanf(char(fileName), 'RSN %f _');

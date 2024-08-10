@@ -1,5 +1,6 @@
-% Using Matlab for ANSYS Batch processing
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function editTextInLine(path,filename,lineNum,editString,desireString)
     filepath = [path, '\', filename];
     fid = fopen(filepath,'r');

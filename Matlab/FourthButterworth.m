@@ -1,5 +1,6 @@
-% 4th-order Butterworth filter design
-% Written by H. P. Duan; hpduan2000@csu.edu.cn; https://www.hpduan.cn  
+% School of Civil Engineering, Central South University
+% H.P.Duan, hpduan2000@csu.edu.cn
+% https://www.hpduan.cn
 function [v_PTR, v_BGR] = FourthButterworth(v_series, dt, Tp, alpha_1)
     fc = 1/(alpha_1*Tp-dt);       % truncation frequency
     fs = 1/dt;
