@@ -19,12 +19,75 @@
 			}
 		}
 	</style>
+	<!-- .....................function..................... -->
+	<!-- ..................updateDateTime.................. -->
+	<script>
+		function updateDateTime() {
+		var now = new Date();
+		var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		var formattedDate = now.toLocaleDateString('en-US', dateOptions);
+		document.getElementById('date').textContent = formattedDate;
+		var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+		var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+		document.getElementById('time').textContent = formattedTime;
+		}
+		setInterval(updateDateTime, 1000);
+		updateDateTime();
+	</script>
+	<!-- ................Disable shortcuts................ -->
+	<script type="text/javascript">
+		window.onload = function(){
+			document.onkeydown = function (){
+				var e = window.event || arguments[0];
+				//F12
+				if(e.keyCode == 123){
+					return false;
+				//Ctrl+Shift+I
+				}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+					return false;
+				//Shift+F10
+				}else if((e.shiftKey) && (e.keyCode == 121)){
+					return false;
+				//Ctrl+U
+				}else if((e.ctrlKey) && (e.keyCode == 85)){
+					return false;
+				}
+			};
+			document.oncontextmenu = function (){
+				return false;
+			}
+		}
+	</script>
+	<!-- .....................includes.................... -->
+	<script>
+		function includeHTML() {
+		var elements = document.querySelectorAll('[include-html]');
+		elements.forEach(function(element) {
+			var file = element.getAttribute('include-html');
+			if (file) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4) {
+				if (this.status == 200) {
+					element.innerHTML = this.responseText;
+				} else if (this.status == 404) {
+					element.innerHTML = "Page not found.";
+				}
+				}
+			};
+			xhr.open('GET', file, true);
+			xhr.send();
+			}
+		});
+		}
+		document.addEventListener('DOMContentLoaded', includeHTML);
+	</script>
 </head>
 <body>
 <div id="wrapper">
 	<!-- .....................header..................... -->
 	<div include-html="https://hpduan.cn/includes/header.html"></div>
-	<!-- .....................content..................... -->
+	<!-- ....................contents.................... -->
 	<section id="main">
 		<!-- Introduction -->
 		<div include-html="https://hpduan.cn/includes/aside_left.html"></div>
@@ -47,70 +110,7 @@
 	</section>
 	<!-- .....................footer..................... -->
 	<div include-html="https://hpduan.cn/includes/footer.html"></div>
-	<!-- .....................end..................... -->
+	<!-- .......................end...................... -->
 </div>
-<!-- .....................function..................... -->
-<!-- .....................updateDateTime..................... -->
-<script>
-	function updateDateTime() {
-	var now = new Date();
-	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
-	document.getElementById('date').textContent = formattedDate;
-	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
-	document.getElementById('time').textContent = formattedTime;
-	}
-	setInterval(updateDateTime, 1000);
-	updateDateTime();
-</script>
-<!-- .....................Disable shortcuts..................... -->
-<script type="text/javascript">
-	window.onload = function(){
-		document.onkeydown = function (){
-			var e = window.event || arguments[0];
-			//F12
-			if(e.keyCode == 123){
-				return false;
-			//Ctrl+Shift+I
-			}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
-				return false;
-			//Shift+F10
-			}else if((e.shiftKey) && (e.keyCode == 121)){
-				return false;
-			//Ctrl+U
-			}else if((e.ctrlKey) && (e.keyCode == 85)){
-				return false;
-			}
-		};
-		document.oncontextmenu = function (){
-			return false;
-		}
-	}
-</script>
-<!-- .....................includes..................... -->
-<script>
-	function includeHTML() {
-	  var elements = document.querySelectorAll('[include-html]');
-	  elements.forEach(function(element) {
-		var file = element.getAttribute('include-html');
-		if (file) {
-		  var xhr = new XMLHttpRequest();
-		  xhr.onreadystatechange = function() {
-			if (this.readyState == 4) {
-			  if (this.status == 200) {
-				element.innerHTML = this.responseText;
-			  } else if (this.status == 404) {
-				element.innerHTML = "Page not found.";
-			  }
-			}
-		  };
-		  xhr.open('GET', file, true);
-		  xhr.send();
-		}
-	  });
-	}
-	document.addEventListener('DOMContentLoaded', includeHTML);
-</script>
 </body>
 </html>
