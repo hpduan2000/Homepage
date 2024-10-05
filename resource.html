@@ -9,57 +9,88 @@
 	<link rel="shortcut icon" href="https://hpduan.cn/images/mydraw.png?v=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<style>
-        body {
-            zoom: 1;
-            transition: zoom 0.3s ease;
-        }
-        @media (min-width: 1200px) {
-            body {
-                zoom: 1.5;
-            }
-        }
-    </style>
+		body {
+			zoom: 1;
+			transition: zoom 0.3s ease;
+		}
+		@media (min-width: 1200px) {
+			body {
+				zoom: 1.5;
+			}
+		}
+	</style>
+	<!-- .....................function..................... -->
+	<!-- ..................updateDateTime.................. -->
+	<script>
+		function updateDateTime() {
+		var now = new Date();
+		var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		var formattedDate = now.toLocaleDateString('en-US', dateOptions);
+		document.getElementById('date').textContent = formattedDate;
+		var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+		var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+		document.getElementById('time').textContent = formattedTime;
+		}
+		setInterval(updateDateTime, 1000);
+		updateDateTime();
+	</script>
+	<!-- ................Disable shortcuts................ -->
+	<script type="text/javascript">
+		window.onload = function(){
+			document.onkeydown = function (){
+				var e = window.event || arguments[0];
+				//F12
+				if(e.keyCode == 123){
+					return false;
+				//Ctrl+Shift+I
+				}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+					return false;
+				//Shift+F10
+				}else if((e.shiftKey) && (e.keyCode == 121)){
+					return false;
+				//Ctrl+U
+				}else if((e.ctrlKey) && (e.keyCode == 85)){
+					return false;
+				}
+			};
+			document.oncontextmenu = function (){
+				return false;
+			}
+		}
+	</script>
+	<!-- .....................includes.................... -->
+	<script>
+		function includeHTML() {
+		var elements = document.querySelectorAll('[include-html]');
+		elements.forEach(function(element) {
+			var file = element.getAttribute('include-html');
+			if (file) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4) {
+				if (this.status == 200) {
+					element.innerHTML = this.responseText;
+				} else if (this.status == 404) {
+					element.innerHTML = "Page not found.";
+				}
+				}
+			};
+			xhr.open('GET', file, true);
+			xhr.send();
+			}
+		});
+		}
+		document.addEventListener('DOMContentLoaded', includeHTML);
+	</script>
 </head>
 <body>
 <div id="wrapper">
 	<!-- .....................header..................... -->
-	<header>
-		<h1>Welcome to My Academic Homepage</h1>
-		<h2 style="font-size: 15px;">
-			<div class="date" id="date"></div>
-			<div class="time" id="time"></div>
-		</h2>
-	</header>
-	<nav>
-		<div class="menu">
-			<ul>
-				<li><a href="https://hpduan.cn/index.html">Home</a></li>
-				<li><a href="https://hpduan.cn/publication.html">Publication</a></li>
-				<li><a href="https://hpduan.cn/resource.html">Resource</a></li>
-				<li><a href="https://hpduan.cn/award.html">Award & Honor</a></li>
-			</ul>
-		</div>
-	</nav>
-	<!-- .....................content..................... -->
+	<div include-html="https://hpduan.cn/includes/header.html"></div>
+	<!-- ....................contents.................... -->
 	<section id="main">
 		<!-- Introduction -->
-		<aside id="sidebar1">
-			<div class="sidebar">
-				<img src="https://hpduan.cn/images/me.webp" width="130" height="173.3333">
-				<h4 style="font-size: 17px;">Haopeng Duan</h4>
-				<h4 style="font-size: 17px;">SEI, S.M.ASCE</h4>
-				<a href="https://www.researchgate.net/profile/Haopeng-Duan" target="_blank" class="icon-link"><i class="fab fa-researchgate"></i></a>
-				<a href="mailto: hpduan2000@csu.edu.cn" target="_blank" class="icon-link"><i class="fas fa-envelope"></i></a>
-				<a href="https://github.com/hpduan2000" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
-				<a href="https://scholar.google.com/citations?user=y0eeLmQAAAAJ&hl=zh-CN&authuser=1" target="_blank" class="icon-link"><i class="fas fa-graduation-cap"></i></a>
-				<a href="https://www.csu.edu.cn/" target="_blank" class="icon-link"><i class="fas fa-school"></i></a>
-			</div>
-			<div class="sidebar">
-				<img src="https://hpduan.cn/images/DuanModel40m.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-				<img src="https://hpduan.cn/images/DuanModel100m.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-				<img src="https://hpduan.cn/images/DuanModelArchBridge.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-			</div>
-		</aside>
+		<div include-html="https://hpduan.cn/includes/aside_left.html"></div>
 		<!-- Main content -->
 		<section id="content">
 			<article>
@@ -79,52 +110,8 @@
 		</section>
 	</section>
 	<!-- .....................footer..................... -->
-	<footer>
-		<section id="footer-area">
-			<section id="footer-outer-block">
-				<aside class="footer-segment">
-					<h4>Copyright by 2022-2024 Haopeng Duan. All Rights Reserved.</h4>
-				</aside>
-			</section>
-		</section>
-	</footer>
-	<!-- .....................end..................... -->
+	<div include-html="https://hpduan.cn/includes/footer.html"></div>
+	<!-- .......................end...................... -->
 </div>
-<script>
-	function updateDateTime() {
-	var now = new Date();
-	var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-	var formattedDate = now.toLocaleDateString('en-US', dateOptions);
-	document.getElementById('date').textContent = formattedDate;
-	var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-	var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
-	document.getElementById('time').textContent = formattedTime;
-	}
-	setInterval(updateDateTime, 1000);
-	updateDateTime();
-</script>
-<script type="text/javascript">
-	window.onload = function(){
-		document.onkeydown = function (){
-			var e = window.event || arguments[0];
-			//F12
-			if(e.keyCode == 123){
-				return false;
-			//Ctrl+Shift+I
-			}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
-				return false;
-			//Shift+F10
-			}else if((e.shiftKey) && (e.keyCode == 121)){
-				return false;
-			//Ctrl+U
-			}else if((e.ctrlKey) && (e.keyCode == 85)){
-				return false;
-			}
-		};
-		document.oncontextmenu = function (){
-			return false;
-		}
-	}
-</script>
 </body>
 </html>
