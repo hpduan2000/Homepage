@@ -1,7 +1,7 @@
 % School of Civil Engineering, Central South University
 % H.P.Duan, hpduan2000@csu.edu.cn
 % https://www.hpduan.cn
-function [PSA, PSV, SD, SA, SV, OUT] = SpectrumGMs(xi, sPeriod, gacc, dt)
+function [PSA, PSV, SD, SA, SV, OUT] = spectrumGMs(xi, sPeriod, gacc, dt)
 % Input:
 %       xi = ratio of critical damping (e.g., 0.05)
 %  sPeriod = vector of spectral periods
