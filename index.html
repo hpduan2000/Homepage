@@ -86,31 +86,16 @@
 <body>
 <div id="wrapper">
 	<!-- .....................header..................... -->
-	<aside id="sidebar1">
-		
-		<div class="sidebar">
-			<img src="https://hpduan.cn/images/me.webp" width="130" height="173.3333">
-			<h4 style="font-size: 17px;">Haopeng Duan</h4>
-			<h4 style="font-size: 17px;">SEI, S.M.ASCE</h4>
-			<a href="https://orcid.org/0009-0001-3842-1703" target="_blank" class="icon-link"><i class="fab fa-orcid"></i></a>
-			<a href="https://www.researchgate.net/profile/Haopeng-Duan" target="_blank" class="icon-link"><i class="fab fa-researchgate"></i></a>
-			<a href="mailto: hpduan2000@csu.edu.cn" target="_blank" class="icon-link"><i class="fas fa-envelope"></i></a>
-			<a href="https://github.com/hpduan2000" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
-			<a href="https://scholar.google.com/citations?user=RoMSBW0AAAAJ&hl=zh-CN" target="_blank" class="icon-link"><i class="fas fa-graduation-cap"></i></a>
-		</div>
-		<div class="sidebar">
-			<img src="https://hpduan.cn/images/DuanModel40m.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-			<img src="https://hpduan.cn/images/DuanModel100m.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-			<img src="https://hpduan.cn/images/DuanModelArchBridge.svg" width="200" style="background-color: #e4e4e4; border-radius: 20px">
-		</div>
-		<div class="clustrmaps">
-			<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=CTb7T3QM6ndYAoNzVADuIko4E27W68g4oGV0ElYv0_Q"></script>
-		</div>
-	</aside>
+	<div include-html="https://hpduan.cn/includes/header.html"></div>
 	<!-- ....................contents.................... -->
 	<section id="main">
 		<!-- Introduction -->
-		<div include-html="https://hpduan.cn/includes/aside_left.html"></div>
+		<aside id="sidebar1">
+			<div include-html="https://hpduan.cn/includes/aside_left.html"></div>
+			<div class="clustrmaps">
+				<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=CTb7T3QM6ndYAoNzVADuIko4E27W68g4oGV0ElYv0_Q"></script>
+			</div>
+		</aside>
 		<!-- Main content -->
 		<section id="content">
 			<!-- Biography -->
@@ -122,6 +107,7 @@
 					I received my bachelor's degree in civil engineering from <a href="https://www.neau.edu.cn/"target="_blank">Northeast Agricultural University</a> in June 2022 and began my graduate studies at <a href="https://www.csu.edu.cn/"target="_blank">Central South University</a> in September 2022. 
 					I am going to graduate in June 2025.
 				</p>
+
 			</article>
 			<!-- Research News -->
 			<article>
