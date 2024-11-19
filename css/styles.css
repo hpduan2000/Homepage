@@ -124,7 +124,12 @@ nav .menu a:hover {
     margin-top: 0px;               /* 与图片之间增加一点间距 */
     margin-bottom: 10px;
     padding: 10px;                 /* 增加内边距，确保Widget不会贴边 */
-    display: inline-block;         /* 使得容器像图片一样显示 */
+/* 使得容器像图片一样显示 display: inline-block;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
 }
 
 
