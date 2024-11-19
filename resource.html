@@ -1,108 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Resource | Haopeng Duan</title>
-	<link rel="stylesheet" type="text/css" href="https://hpduan.cn/css/styles.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="https://hpduan.cn/css/print.css" media="print" />
-	<link rel="shortcut icon" href="https://hpduan.cn/images/mydraw.png?v=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<style>
-		body {
-			zoom: 1;
-			transition: zoom 0.3s ease;
-		}
-		@media (min-width: 1200px) {
-			body {
-				zoom: 1.5;
-			}
-		}
-	</style>
-	<!-- .....................function..................... -->
-	<!-- ..................updateDateTime.................. -->
-	<script>
-		function updateDateTime() {
-		var now = new Date();
-		var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-		var formattedDate = now.toLocaleDateString('en-US', dateOptions);
-		document.getElementById('date').textContent = formattedDate;
-		var timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-		var formattedTime = now.toLocaleTimeString('en-US', timeOptions);
-		document.getElementById('time').textContent = formattedTime;
-		}
-		setInterval(updateDateTime, 1000);
-		updateDateTime();
-	</script>
-	<!-- ................Disable shortcuts................ -->
-	<script type="text/javascript">
-		window.onload = function(){
-			document.onkeydown = function (){
-				var e = window.event || arguments[0];
-				//F12
-				if(e.keyCode == 123){
-					return false;
-				//Ctrl+Shift+I
-				}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
-					return false;
-				//Shift+F10
-				}else if((e.shiftKey) && (e.keyCode == 121)){
-					return false;
-				//Ctrl+U
-				}else if((e.ctrlKey) && (e.keyCode == 85)){
-					return false;
-				}
-			};
-			document.oncontextmenu = function (){
-				return false;
-			}
-		}
-	</script>
-	<!-- .....................includes.................... -->
-	<script>
-		function includeHTML() {
-		var elements = document.querySelectorAll('[include-html]');
-		elements.forEach(function(element) {
-			var file = element.getAttribute('include-html');
-			if (file) {
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() {
-				if (this.readyState == 4) {
-				if (this.status == 200) {
-					element.innerHTML = this.responseText;
-				} else if (this.status == 404) {
-					element.innerHTML = "Page not found.";
-				}
-				}
-			};
-			xhr.open('GET', file, true);
-			xhr.send();
-			}
-		});
-		}
-		document.addEventListener('DOMContentLoaded', includeHTML);
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入 ClustrMaps</title>
 </head>
 <body>
-<div id="wrapper">
-	<!-- .....................header..................... -->
-	<div include-html="https://hpduan.cn/includes/header.html"></div>
-	<!-- ....................contents.................... -->
-	<section id="main">
-		<!-- Introduction -->
-		<div include-html="https://hpduan.cn/includes/aside_left.html"></div>
-		<!-- Main content -->
-		<section id="content">
-			<article>
-				<h2>Book</h2>
-				<p style="font-size: 17px;"><a target="_blank" href="https://hpduan.cn/Book/FEMA p58-1.pdf">[2] FEMA p58-1 Seismic Performance Assessment of Buildings</a></p>
-				<p style="font-size: 17px;"><a target="_blank" href="https://hpduan.cn/Book/Performance-based earthquake engineering.pdf">[1] From Engineering Seismology to Performance-Based Engineering</a></p>
-			</article>
-		</section>
-	</section>
-	<!-- .....................footer..................... -->
-	<div include-html="https://hpduan.cn/includes/footer.html"></div>
-	<!-- .......................end...................... -->
-</div>
+    <h1>欢迎访问我的网站</h1>
+    <p>以下是 ClustrMaps 全球访问统计图：</p>
+    
+    <!-- 这里是你提供的 ClustrMaps 脚本 -->
+    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=CTb7T3QM6ndYAoNzVADuIko4E27W68g4oGV0ElYv0_Q"></script>
 </body>
 </html>
