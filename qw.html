@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地调试 ClustrMaps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        #clustrmaps {
+            width: 200px;                  /* 统一宽度 */
+            background-color: #e4e4e4;     /* 统一背景颜色 */
+            border-radius: 20px;           /* 统一圆角 */
+            margin-top: 10px;               /* 与图片之间增加一点间距 */
+            padding: 10px;                 /* 增加内边距，确保Widget不会贴边 */
+            display: inline-block;         /* 使得容器像图片一样显示 */
+        }
+    </style>
+</head>
+<body>
+    <h1>欢迎访问我的网站</h1>
+    <p>以下是 ClustrMaps 全球访问统计图：</p>
+    
+    <!-- 这里是 ClustrMaps 的 JavaScript 脚本 -->
+    <div id="clustrmaps">
+        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=CTb7T3QM6ndYAoNzVADuIko4E27W68g4oGV0ElYv0_Q"></script>
+    </div>
+
+    <p>请确保您已连接到互联网，才能查看全球访问统计图。</p>
+</body>
+</html>
