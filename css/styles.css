@@ -117,7 +117,7 @@ nav .menu a:hover {
     justify-content: center;
 }
 #clstr_globe {
-    width: 200px;
+    width: 200;
 }
 .sidebar a:link, .sidebar a:visited, .sidebar h4{
     color: #000000;  /* 字体颜色 */
