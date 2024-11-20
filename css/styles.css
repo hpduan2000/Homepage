@@ -123,7 +123,7 @@ nav .menu a:hover {
     border-radius: 20px;           /* 统一圆角 */
     margin-top: 0px;               /* 与图片之间增加一点间距 */
     margin-bottom: 10px;
-    padding-top: 5px;                /*  增加内边距，确保Widget不会贴边 */
+    padding-top: 10px;                /*  增加内边距，确保Widget不会贴边 */
 /* 使得容器像图片一样显示 display: inline-block;*/
     display: flex;
     flex-direction: column;
