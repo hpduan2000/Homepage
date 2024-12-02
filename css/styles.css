@@ -130,6 +130,7 @@ nav .menu a:hover {
     align-items: center;
     text-align: left;
     justify-content: center;
+    pointer-events: none;
 }
 
 
