@@ -182,7 +182,7 @@ article {
 article ul {
     list-style-type: square;
     padding-left: 20px;
-    padding-bottom: -10px;
+    padding-bottom: -20px;
     font-size:13px;
 }
 article li {
