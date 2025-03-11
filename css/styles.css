@@ -182,7 +182,7 @@ article {
 article ul {
     list-style-type: square;
     padding-left: 20px;
-    font-size:15px;
+    font-size:13px;
 }
 article li {
     margin-bottom: 8px;
@@ -256,7 +256,7 @@ footer {
 }
 footer aside h4 {
     color: #000000;
-    font-size: 18px;
+    font-size: 13px;
 }
 /* footer aside h5 {
     color: #000000;
