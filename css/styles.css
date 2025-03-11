@@ -179,6 +179,15 @@ article {
     padding-bottom: 0.5em;
     margin-bottom: 15px;
 }
+article ul {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size:15px;
+}
+
+article li {
+    margin-bottom: 8px;
+}
 article img {
     border: none;
 }
