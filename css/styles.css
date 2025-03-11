@@ -156,10 +156,10 @@ nav .menu a:hover {
     width: 680px;
     margin-right: 20px;
 }
-#content p, ul, ol, hr {
+/* #content p, ul, ol, hr {
     margin-bottom: 12px;
     margin-top: 5px;
-}
+} */
 #content ul ul, ol ol, ul ol, ol ul {
     margin-bottom: 0;
 }
