@@ -244,14 +244,14 @@ footer {
     padding: 18px 0;
     overflow: hidden;
     width: 940px;
-    height: 10px;
+    height: 6px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 }
 .footer-segment {
     float: left;
     width: 940px;
-    margin-top: -7px;
+    margin-top: -3px;
     text-align: center;
 }
 footer aside h4 {
