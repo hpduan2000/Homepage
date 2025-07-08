@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
 margin: 0;
 padding: 0;
@@ -10,6 +17,7 @@ header, footer, section, aside, nav, article {
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* 总体背景及字体颜色 */
+
 body {
     font-family: 'Roboto';
     color: #000000;   /* 字体颜色 */
