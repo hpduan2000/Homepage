@@ -19,6 +19,15 @@
 			}
 		}
 	</style>
+
+	<script>
+		fetch("https://api.countapi.xyz/hit/your-site-name/visits")
+		.then(res => res.json())
+		.then(data => {
+			document.getElementById("visits").innerText = data.value;
+		});
+	</script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -77,7 +86,7 @@
 	<footer>
 		<section id="footer-area">
 			<aside class="footer-segment">
-				<h4>Copyright by 2022-2026 Haopeng Duan. All Rights Reserved.</h4>
+				<h4>Copyright by 2022-2026 Haopeng Duan. All Rights Reserved. Pageviews: <span id="visits"></span></h4>
 			</aside>
 		</section>
 	</footer>
