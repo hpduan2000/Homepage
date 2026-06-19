@@ -60,5 +60,12 @@
 			.then(html => el.innerHTML = html);
 	});
 </script>
+<script>
+fetch("https://api.countapi.xyz/hit/hpduan/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visits").innerText = data.value;
+  });
+</script>
 </body>
 </html>
