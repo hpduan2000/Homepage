@@ -38,7 +38,7 @@
 	<!-- ....................contents.................... --> 
 	<section id="main">
 		<!-- Introduction -->
-		<aside id="sidebar1">
+		<!-- <aside id="sidebar1">
 			<div class="sidebar">
 				<img src="images/IMG_4773.JPG" width="110">
 				<h4 style="font-size: 14px;">Haopeng Duan</h4>
@@ -51,7 +51,8 @@
 				<img src="images/DuanModel40m.svg" width="150" style="background-color: #e4e4e4; border-radius: 20px">
 				<img src="images/DuanModelArchBridge.svg" width="150" style="background-color: #e4e4e4; border-radius: 20px">
 			</div>
-		</aside>
+		</aside> -->
+		<div data-include="sidebar.html"></div>
 		<!-- Main content -->
 		<section id="content">
 			<!-- Biography -->
@@ -83,7 +84,12 @@
 	</footer>
 	<!-- .......................end...................... -->
 </div>
+<script>
+	document.querySelectorAll("[data-include]").forEach(el => {
+		fetch(el.getAttribute("data-include"))
+			.then(res => res.text())
+			.then(html => el.innerHTML = html);
+	});
+</script>
 </body>
 </html>
-
-
