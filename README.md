@@ -1,1 +1,1 @@
-## Personal Academic Homepage, Created by Haopeng Duan
+## General Personal Academic Homepage, © 2026 Haopeng Duan

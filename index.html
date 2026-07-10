@@ -1,1 +1,107 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Haopeng Duan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/mydraw.png?v=1">
+</head>
+<body>
+    <div class="container">
+        <!-- =========================
+                Sidebar
+        ========================== -->
+        <aside class="sidebar">
+            <img
+                class="profile-photo"
+                src="images/IMG_4773.JPG"
+                alt="Haopeng Duan">
+            <div class="name">
+                Haopeng Duan
+            </div>
+            <div class="affiliation">
+                Ph.D. Student<br>
+                Department of Civil Engineering<br>
+                The University of British Columbia<br>
+            </div>
+            <div class="links">
+                <a href="mailto:hpduan@student.ubc.ca">Email</a>
+                <a href="https://github.com/hpduan2000" target="_blank">GitHub</a>
+                <a href="https://orcid.org/0009-0001-3842-1703" target="_blank">ORCID</a>
+                <a href="https://scholar.google.com/citations?user=RoMSBW0AAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
+            </div>
+            <div>
+                <img src="images/DuanModel40m.svg">
+                <img src="images/DuanModelArchBridge.svg">
+            </div>
+        </aside>
+        <!-- =========================
+                Main Content
+        ========================== -->
+        <main class="content">
+            <!-- Biography -->
+            <h2>Biography</h2>
+            <p>
+                I am a Ph.D. student in the <a href="https://smartstructures.civil.ubc.ca/"target="_blank">Smart Structures Lab</a> at the <a href="https://www.ubc.ca/"target="_blank">University of British Columbia (UBC)</a>, Vancouver, Canada. 
+				My current research focuses on modular structures, spanning modular manufacturing and assembly, modular structural performance assessment and enhancement under seismic loads, and the safety of modular connections, 
+				using numerical analysis, shake table testing, robotics, and AI-powered solutions to enhance modular structural performance and construction efficiency.
+            </p>
+            <!-- Honors -->
+            <h2>Honors & Awards</h2>
+            <ul>
+                <li><a href="https://www.csc.edu.cn/" target="_blank">China Scholarship Council (CSC)</a> Doctoral Fellowship, 2025-2030</li>
+				<li>Outstanding Graduate Student Scholarship, 2022-2024</li>
+				<li>Outstanding Undergraduate Student Scholarship, 2019-2021</li>
+            </ul>
+            <!-- Professional Affiliations -->
+            <h2>Professional Affiliations</h2>
+            <ul>
+                <li>Member, <a href="https://www.asce.org/" target="_blank">American Society of Civil Engineers (ASCE)</a>, 2025-Present</li>
+            </ul>
+            <!-- Publications -->
+            <h2>Selected Publications</h2>
+            <ul>
+                <li><a href="https://doi.org/10.1061/JBENF2.BEENG-7058" target="_blank">Jiang L, <strong>Duan H</strong>, Wen T, et al. Effects of near-fault pulse-like ground motions and pulse parameters on a high-speed railway long-span arch bridge–track system[J]. ASCE Journal of Bridge Engineering, 2025, 30(2): 04024112.</a></li>
+                <li><a href="https://doi.org/10.1016/j.soildyn.2024.108811" target="_blank"><strong>Duan H</strong>, Jiang L, Wen T, et al. An improved interlayer area damage model for seismic damage assessment of a high-speed railway long-span arch bridge-track system[J]. Soil Dynamics and Earthquake Engineering, 2024, 184: 108811.</a></li>
+            </ul>
+        </main>
+    </div>
+    <!-- =========================
+                Footer
+    ========================== -->
+    <footer>
+        &copy; <span id="year"></span> Haopeng Duan |
+        Last updated: <span id="last-updated">Loading...</span> <br>
+        6250 Applied Science Lane, Vancouver, BC V6T 1Z4, Canada
+    </footer>
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+        
+        fetch("https://api.github.com/repos/hpduan2000/Homepage/commits")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const date = new Date(
+                data[0].commit.committer.date
+            );
+            document.getElementById("last-updated").textContent =
+                date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                });
+        })
+        .catch(error => {
+            console.log(error);
+            document.getElementById("last-updated").textContent =
+                "Unavailable";
+        });
+    </script>
+</body>
+</html>

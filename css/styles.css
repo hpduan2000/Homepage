@@ -1,301 +1,122 @@
+/* =========================
+Global
+========================== */
 @font-face {
-  font-family: 'Roboto';
-  src: url('Roboto-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-*{
-margin: 0;
-padding: 0;
-}
-
-/* html 5 */
-header, footer, section, aside, nav, article {
-    display: block;
-}
-
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* 总体背景及字体颜色 */
-
-body {
     font-family: 'Roboto';
-    color: #000000;   /* 字体颜色 */
-    font-size: 14px;
-    line-height: 18px;
-    background-color: #ffffff;  /* 总体背景 */
+    src: url('Roboto-Regular.woff2') format('woff2');
 }
-h1,h2,h3,h4,h5,h6 {
-    font-weight: bold;
-    clear: both;
-    color: #000000;
+
+* {
+    box-sizing: border-box;
 }
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* 外圈框线 */
-#wrapper {
-    width: 760px;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 3px solid #606060;   /* 外圈框线颜色 */
-    border-radius: 20px;
-}
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* 抬头header */
-header {
-    padding: 20px 0 0 0;
-}  
-/* Welcome to My Academic Homepage */
-header>h1 {
-    float: left;
-    margin: 0px 0 10px 20px;
-    width: 760px;
-    font-size: 30px;
-    line-height: 30px;
-    color: #4DBEEE;
-    font-weight: bold;
-    text-decoration: none;
-}  
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* 顶部菜单栏 */
-nav {
-    width: 760px;
-    height: 40px;
-    margin: 0 auto;
-    margin-top: -5px;
-}
-/* 菜单栏 */
-nav .menu {
-    font-size: 22px;
-    font-weight: bold;
-}
-nav .menu ul {
+body {
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    color: #222;
+    line-height: 1.5;
     margin: 0;
-    padding: 20px 10px 10px 20px;
-    list-style: none;
-    line-height: normal;
+    background: #ffffff;
 }
-nav .menu li {
-    display: block;
-    float: left;
-}
-nav .menu a {
-    display: block;
-    float: left;
-    margin-right: 5px;
-    padding: 10px 15px 0px 20px;
+a {
+    color: #4DBEEE;
     text-decoration: none;
-    color: #A2142F; /*菜单栏字体颜色*/
 }
-nav .menu a:hover {
-    text-decoration: underline;  /*菜单栏字体下划线*/
+a:hover {
+    text-decoration: underline;
 }
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-
-/* 正文布局 */
-/* 总宽度940px */
-#main {
-    width: 760px;
-    margin: 0 auto;
-    padding-top: 20px;
-    overflow: hidden;
+/* =========================
+Layout
+========================== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 25px;
+    display: flex;
+    gap: 50px;
 }
-    /* 左边侧栏 */
-#sidebar1 {
-    float: left;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 0px;
-    width: 150px;
-}
+/* =========================
+Sidebar
+========================== */
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
+    width: 260px;
+    text-align: center;
+    flex-shrink: 0;
 }
-.sidebar a {
-    font-size: 12px;
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
 }
-
-.clustrmaps {
-    width: 150px;                  /* 统一宽度 */
-    background-color: #e4e4e4;     /* 统一背景颜色 */
-    border-radius: 20px;           /* 统一圆角 */
-    margin-top: 0px;               /* 与图片之间增加一点间距 */
-    margin-bottom: 10px;
-    padding-top: 20px;                /*  增加内边距，确保Widget不会贴边 */
-/* 使得容器像图片一样显示 display: inline-block;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-    pointer-events: none;
+.name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
 }
-
-
-.sidebar a:link, .sidebar a:visited, .sidebar h4{
-    color: #000000;  /* 字体颜色 */
-}
-.sidebar img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-.icon-link {
-    margin-bottom: 10px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-/* 中间内容 */
-#content {
-    float: left;
-    width: 550px;
-    margin-right: 20px;
-    margin-top: 0px;
-}
-/* #content p, ul, ol, hr {
-    margin-bottom: 12px;
-    margin-top: 5px;
-} */
-#content ul ul, ol ol, ul ol, ol ul {
-    margin-bottom: 0;
-}
-#content h1, h2, h3, h4, h5, h6 {
-    color: #000000;
-    margin: 0 0 0 0;
-    line-height: 1.5em;
-}
-article {
-    /* text-align: justify; */
-    line-height: 1.35;
-    background-color: #e4e4e4;
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-article ul {
-    list-style-type: square;
-    margin-left: 10px;
-    font-size:14px;
-}
-article li {
-    margin-bottom: 5px;
-}
-article img {
-    border: none;
-}
-a:link, a:visited {
-    color:#4DBEEE;
-}
-a:hover, a:active {
-    color:#000000;
-}
-.alignleft, img.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 10px;
+.affiliation {
+    color: #555;
     margin-top: 10px;
 }
-.alignright, img.alignright {
-    display: inline;
-    float: right;
-    margin-left: 10px;
+.links {
+    margin-top: 20px;
 }
-.aligncenter, img.aligncenter {
-    clear: both;
+.links a {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 8px 0;
 }
-img.alignleft, img.alignright, img.aligncenter {
+/* =========================
+Content
+========================== */
+.content {
+    flex: 1;
+}
+h1 {
+    font-size: 30px;
+    margin-top: 0;
+}
+h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+p {
+    font-size: 16px;
+}
+ul {
+    padding-left: 20px;
+}
+li {
     margin-bottom: 10px;
 }
-
-.pdf-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.pdf-container object {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-
-#content2 {
-    float: left;
-    width: 260px;
-    margin-left: 5px;
-    margin-right: 13px;
-    /* margin-top: 50px; */
-}
-
-
-/* 底部 */
+/* =========================
+Footer
+========================== */
 footer {
-    width: 760px;
-    margin: 0 auto;
-    clear: both;
-}
-/* 页面底部 */
-#footer-area {
-    background: #e4e4e4;
-    color: #000000;
-    font-size: 90%;
-    padding: 10px 0;
-    overflow: hidden;
-    width: 760px;
-    height: 6px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-}
-.footer-segment {
-    float: left;
-    width: 760px;
-    margin-top: -7px;
     text-align: center;
-}
-footer aside h4 {
-    color: #000000;
+    color: #777;
     font-size: 14px;
+    padding: 30px;
+    border-top: 1px solid #eee;
 }
-/* footer aside h5 {
-    color: #000000;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0 0 20px 0;
+/* =========================
+Mobile Responsive
+========================== */
+@media screen and (max-width: 768px) {
+    .container {
+        display: block;
+        margin-top: 25px;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .content {
+        width: 100%;
+    }
+    h1 {
+        font-size: 26px;
+    }
 }
-footer ul {
-    list-style: none;
-    margin-left: 5px;
-}
-footer a:link, footer a:visited {
-    color: #000000;
-}
-footer a:hover { 
-    text-decoration: underline; 
-}
-footer p {
-    margin-left: 10px;
-}
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.footer-links b {
-    flex: 0 0 15%;
-    margin: 5px;
-    margin-bottom: -20px;
-} */
-    
