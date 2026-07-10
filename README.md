@@ -1,1 +1,1 @@
-## Copyright by 2022-2026 Haopeng Duan. All Rights Reserved.
+## Personal Academic Homepage, Created by Haopeng Duan
