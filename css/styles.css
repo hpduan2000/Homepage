@@ -115,6 +115,10 @@ footer {
     padding: 30px;
     border-top: 1px solid #eee;
 }
+.visitor-badge {
+    display: block;
+    margin: 5px auto 0;
+}
 /* =========================
 Mobile Responsive
 ========================== */
