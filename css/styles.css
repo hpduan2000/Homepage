@@ -11,11 +11,11 @@ Global
 }
 body {
     font-family:
-        "Helvetica Neue",
+        "Roboto",
         Arial,
         sans-serif;
     color: #222;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
     background: #ffffff;
 }
@@ -51,7 +51,7 @@ Sidebar
     border-radius: 50%;
 }
 .name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 20px;
 }
@@ -65,6 +65,16 @@ Sidebar
 .links a {
     display: block;
     margin: 8px 0;
+}
+/* =========================
+Banner
+========================== */
+.banner {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-bottom: 30px;
+    border-radius: 12px;
 }
 /* =========================
 Content
@@ -83,10 +93,11 @@ h2 {
     border-bottom: 1px solid #ddd;
 }
 p {
-    font-size: 16px;
+    font-size: 18px;
 }
 ul {
     padding-left: 20px;
+    font-size: 18px;
 }
 li {
     margin-bottom: 10px;
@@ -97,7 +108,7 @@ Footer
 footer {
     text-align: center;
     color: #777;
-    font-size: 14px;
+    font-size: 16px;
     padding: 30px;
     border-top: 1px solid #eee;
 }
